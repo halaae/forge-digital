@@ -1,14 +1,14 @@
 :root {
-  --brand: #00ff06;
-  --brand-hover: #00cc05;
-  --bg-dark: #111111;
-  --bg-darker: #050505;
+  --brand: #A0522D;
+  --brand-hover: #8B4513;
+  --bg-dark: #3E2723;
+  --bg-darker: #2D1A11;
   --bg-light: #ffffff;
-  --bg-gray: #f8f9fa;
-  --text-primary: #111111;
-  --text-secondary: #555555;
+  --bg-gray: #FAF5F0;
+  --text-primary: #2e1c15;
+  --text-secondary: #5c453c;
   --text-inverse: #ffffff;
-  --text-inverse-secondary: #cccccc;
+  --text-inverse-secondary: #dfcfc5;
   
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
@@ -82,7 +82,7 @@ button {
 .btn-primary:hover {
   background-color: var(--brand-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 255, 6, 0.3);
+  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.3);
 }
 
 .btn-outline {
