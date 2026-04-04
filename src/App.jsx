@@ -13,16 +13,16 @@ import './App.css';
 
 const Marquee = () => {
   const testimonials = [
-    "✦ Salary increased by 40%",
-    "✦ Landed FAANG Interview in 2 Weeks",
-    "✦ Beat 500+ applicants natively",
-    "✦ Promoted to Executive Level",
-    "✦ Portfolio locked 3 freelance contracts",
-    "✦ 98% Callback Rate Achieved",
-    "✦ Landed FAANG Interview in 2 Weeks",
-    "✦ Beat 500+ applicants natively",
-    "✦ Salary increased by 40%",
-    "✦ Promoted to Executive Level"
+    "✦ ATS-Optimized Resumes",
+    "✦ Data-Driven Cover Letters",
+    "✦ Executive Profile Makeovers",
+    "✦ Premium Digital Portfolios",
+    "✦ High-Impact Keyword Targeting",
+    "✦ Modern Minimalist Aesthetics",
+    "✦ Express 6-Hour Delivery Available",
+    "✦ LinkedIn Algorithm Optimization",
+    "✦ ATS-Optimized Resumes",
+    "✦ Executive Profile Makeovers"
   ];
 
   return (
