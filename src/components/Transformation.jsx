@@ -42,18 +42,19 @@ export default function Transformation() {
           style={{
              position: 'relative',
              width: '100%',
-             maxWidth: '1000px',
+             maxWidth: '600px',
+             aspectRatio: '1 / 1.414',
              margin: '0 auto',
-             height: '750px', 
-             borderRadius: '16px',
+             borderRadius: '12px',
              boxShadow: '0 40px 80px rgba(160, 82, 45, 0.15)',
              cursor: 'ew-resize',
              userSelect: 'none',
-             border: '1px solid rgba(0,0,0,0.05)'
+             border: '1px solid rgba(0,0,0,0.05)',
+             overflow: 'hidden'
           }}
         >
           {/* AFTER Image (Pristine ATS, rendering universally underneath) */}
-          <div style={{ position: 'absolute', top: '1rem', right: '2rem', zIndex: 1, backgroundColor: 'var(--brand)', color: 'white', padding: '0.5rem 1.5rem', borderRadius: '30px', fontWeight: 'bold' }}>
+          <div style={{ position: 'absolute', top: '1rem', right: '1rem', zIndex: 1, backgroundColor: 'var(--brand)', color: 'white', padding: '0.4rem 1rem', borderRadius: '30px', fontWeight: 'bold', fontSize: '0.85rem' }}>
             Forge Template
           </div>
           <img 
@@ -66,7 +67,7 @@ export default function Transformation() {
 
           {/* BEFORE Image (Cluttered, physically layered over top using a dynamic geometry inset block) */}
           <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
-              <div style={{ position: 'absolute', top: '1rem', left: '2rem', zIndex: 1, backgroundColor: '#e25555', color: 'white', padding: '0.5rem 1.5rem', borderRadius: '30px', fontWeight: 'bold' }}>
+              <div style={{ position: 'absolute', top: '1rem', left: '1rem', zIndex: 1, backgroundColor: '#e25555', color: 'white', padding: '0.4rem 1rem', borderRadius: '30px', fontWeight: 'bold', fontSize: '0.85rem' }}>
                 Unoptimized Clutter
               </div>
               <img 
