@@ -1,8 +1,8 @@
 :root {
-  --brand: #8B4513; /* Rich, darker saddle brown */
-  --brand-hover: #6E320A; /* Deep mahogany for hover */
-  --bg-dark: #36221E; /* Deeper espresso background */
-  --bg-darker: #211310; /* Near-black espresso */
+  --brand: #B85C38; /* Rich striking copper for buttons and marquee */
+  --brand-hover: #9C4A22; /* Deeper copper for hover states */
+  --bg-dark: #36221E; /* Deeper espresso background (kept from previous tweak) */
+  --bg-darker: #211310; /* Near-black espresso (kept from previous tweak) */
   --bg-light: #ffffff;
   --bg-gray: #FAF5F0;
   --text-primary: #2e1c15;
@@ -76,7 +76,7 @@ button {
 
 .btn-primary {
   background-color: var(--brand);
-  color: var(--bg-dark);
+  color: var(--bg-light); /* Enforce white text for high contrast pop */
 }
 
 .btn-primary:hover {
