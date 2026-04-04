@@ -18,7 +18,7 @@ export default function WhyPortfolio() {
             <img 
               src="/portfolio.png" 
               alt="Digital Portfolio Example" 
-              style={{ width: '85%', maxWidth: '500px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', objectFit: 'cover' }} 
+              style={{ width: '100%', maxWidth: '500px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', objectFit: 'cover' }} 
             />
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function WhyPortfolio() {
             <img 
               src="/linkedin.png" 
               alt="LinkedIn Profile Example" 
-              style={{ width: '85%', maxWidth: '500px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', objectFit: 'cover' }} 
+              style={{ width: '100%', maxWidth: '500px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', objectFit: 'cover' }} 
             />
           </div>
         </div>

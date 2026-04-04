@@ -5,7 +5,7 @@ export default function AtsScrambler() {
   const [isScanned, setIsScanned] = useState(false);
 
   return (
-    <section className="bg-dark" style={{ padding: '8rem 0' }}>
+    <section className="bg-dark" style={{ padding: '4rem 0' }}>
       <div className="container text-center reveal">
         <h2 style={{ fontSize: '3.5rem', color: 'var(--brand)', marginBottom: '1.5rem' }}>The ATS Scrambler Simulator</h2>
         <p style={{ color: 'var(--text-inverse-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto 4rem auto', lineHeight: 1.8 }}>
@@ -20,7 +20,7 @@ export default function AtsScrambler() {
           <Cpu /> {isScanned ? 'Reset Simulator' : 'Scan Portfolios via ATS Bot'}
         </button>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', textAlign: 'left' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', textAlign: 'left' }}>
           
           {/* BAD GRAPHIC RESUME */}
           <div style={{ backgroundColor: 'var(--bg-darker)', borderRadius: '12px', padding: '2.5rem', border: isScanned ? '1px solid #ff4d4d' : '1px solid rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden', transition: 'all 0.5s ease' }}>

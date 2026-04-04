@@ -54,7 +54,7 @@ export default function TypewriterCover() {
   }, []);
 
   return (
-    <section className="bg-light" style={{ padding: '6rem 0' }}>
+    <section className="bg-light" style={{ padding: '4rem 0' }}>
       <div className="container split-layout">
         <div className="text-content reveal">
           <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Data-Driven Copywriting</h2>
