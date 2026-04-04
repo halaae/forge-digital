@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500" preserveAspectRatio="none">
+  <rect width="100%" height="100%" fill="#fdfbf7"/>
+  
+  <text x="50%" y="50" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">JANE SMITH</text>
+  <text x="50%" y="70" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">123 Fake Street, CA 90210 | (555) 012-3456</text>
+  <text x="50%" y="85" font-family="Arial, sans-serif" font-size="12" fill="#0066cc" text-anchor="middle">janesmith@email.com</text>
+  
+  <rect x="30" y="110" width="340" height="2" fill="#333"/>
+  <text x="30" y="130" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#333">OBJECTIVE</text>
+  <text x="30" y="150" font-family="Arial, sans-serif" font-size="11" fill="#444">Dedicated and results-driven professional seeking a challenging role</text>
+  <text x="30" y="165" font-family="Arial, sans-serif" font-size="11" fill="#444">to utilize my skills and experience in a dynamic environment.</text>
+  
+  <rect x="30" y="190" width="340" height="2" fill="#333"/>
+  <text x="30" y="210" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#333">EXPERIENCE</text>
+  <text x="30" y="235" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Marketing Specialist | Tech Corp</text>
+  <text x="30" y="250" font-family="Arial, sans-serif" font-size="11" fill="#444">• Developed comprehensive marketing strategies.</text>
+  <text x="30" y="265" font-family="Arial, sans-serif" font-size="11" fill="#444">• Increased conversion rates by 25% within first year.</text>
+  <text x="30" y="280" font-family="Arial, sans-serif" font-size="11" fill="#444">• Managed a budget of over $50,000.</text>
+
+  <rect x="30" y="310" width="340" height="2" fill="#333"/>
+  <text x="30" y="330" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#333">EDUCATION</text>
+  <text x="30" y="355" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Bachelor of Arts in Marketing</text>
+  <text x="30" y="370" font-family="Arial, sans-serif" font-size="11" fill="#444">University of State | Graduated 2018</text>
+  
+  <!-- Add a little unorganized clutter -->
+  <text x="30" y="420" font-family="Arial, sans-serif" font-size="9" fill="#999">References available upon request</text>
+  <text x="30" y="435" font-family="Arial, sans-serif" font-size="9" fill="#999">Willing to relocate</text>
+</svg>

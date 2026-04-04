@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500" preserveAspectRatio="none">
+  <rect width="100%" height="100%" fill="#ecf0f1"/>
+  
+  <!-- Left Column -->
+  <rect width="140" height="500" fill="#2c3e50"/>
+  <circle cx="70" cy="70" r="40" fill="#bdc3c7"/>
+  <!-- fake photo contour -->
+  <circle cx="70" cy="65" r="15" fill="#fcfcfc"/>
+  <path d="M45,95 Q70,75 95,95" fill="none" stroke="#fcfcfc" stroke-width="8" stroke-linecap="round"/>
+
+  <text x="20" y="150" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ecf0f1">CONTACT</text>
+  <text x="20" y="170" font-family="Arial, sans-serif" font-size="10" fill="#bdc3c7">Phone</text>
+  <text x="20" y="185" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1">555-987-6543</text>
+  
+  <text x="20" y="210" font-family="Arial, sans-serif" font-size="10" fill="#bdc3c7">Email</text>
+  <text x="20" y="225" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1">alexp@email.com</text>
+
+  <text x="20" y="260" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ecf0f1">SKILLS</text>
+  <text x="20" y="280" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1">UI/UX Design</text>
+  <rect x="20" y="290" width="100" height="4" fill="#34495e"/>
+  <rect x="20" y="290" width="85" height="4" fill="#1abc9c"/>
+
+  <text x="20" y="315" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1">Project Management</text>
+  <rect x="20" y="325" width="100" height="4" fill="#34495e"/>
+  <rect x="20" y="325" width="60" height="4" fill="#1abc9c"/>
+
+  <text x="20" y="350" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1">Adobe Suite</text>
+  <rect x="20" y="360" width="100" height="4" fill="#34495e"/>
+  <rect x="20" y="360" width="95" height="4" fill="#1abc9c"/>
+
+  <!-- Right Column -->
+  <text x="160" y="55" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#2c3e50">ALEX PARKER</text>
+  <text x="160" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1abc9c">Creative Director</text>
+  
+  <text x="160" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">PROFILE</text>
+  <text x="160" y="135" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Award-winning Creative Director</text>
+  <text x="160" y="148" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">with over 10 years of experience</text>
+  <text x="160" y="161" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">in digital design and branding.</text>
+  
+  <text x="160" y="200" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">WORK EXPERIENCE</text>
+  <text x="160" y="220" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Senior Designer</text>
+  <text x="160" y="235" font-family="Arial, sans-serif" font-size="10" fill="#1abc9c">Creative Agency | 2019 - Present</text>
+  <circle cx="165" cy="250" r="3" fill="#7f8c8d"/>
+  <text x="175" y="254" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Led a team of 15 designers.</text>
+  <circle cx="165" cy="265" r="3" fill="#7f8c8d"/>
+  <text x="175" y="269" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Increased client retention by 40%.</text>
+  <circle cx="165" cy="280" r="3" fill="#7f8c8d"/>
+  <text x="175" y="284" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Spearheaded 3 major campaigns.</text>
+  
+  <text x="160" y="315" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Art Director</text>
+  <text x="160" y="330" font-family="Arial, sans-serif" font-size="10" fill="#1abc9c">Design Studio | 2015 - 2019</text>
+  <circle cx="165" cy="345" r="3" fill="#7f8c8d"/>
+  <text x="175" y="349" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Managed global branding budgets.</text>
+  
+</svg>
