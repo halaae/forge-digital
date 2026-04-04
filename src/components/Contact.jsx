@@ -12,14 +12,14 @@ export default function Contact() {
             <div className="contact-icon">
               <Phone size={36} strokeWidth={1.5} />
             </div>
-            <span>+91 8848524175</span>
+            <span className="contact-number">+91 8848524175</span>
           </a>
 
           <a href="https://wa.me/918848524175" target="_blank" rel="noopener noreferrer" className="contact-link">
             <div className="contact-icon">
               <MessageCircle size={36} strokeWidth={1.5} />
             </div>
-            <span>+91 8848524175</span>
+            <span className="contact-number">+91 8848524175</span>
           </a>
           
           <a href="mailto:mail.forgedigital@gmail.com" className="contact-link">
