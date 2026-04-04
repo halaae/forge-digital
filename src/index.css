@@ -1,14 +1,14 @@
 :root {
-  --gold: #A0522D;
-  --gold-hover: #8B4513;
-  --bg-dark: #3E2723;
-  --bg-darker: #2D1A11;
+  --brand: #00ff06;
+  --brand-hover: #00cc05;
+  --bg-dark: #111111;
+  --bg-darker: #050505;
   --bg-light: #ffffff;
-  --bg-gray: #FAF5F0;
-  --text-primary: #2e1c15;
-  --text-secondary: #5c453c;
+  --bg-gray: #f8f9fa;
+  --text-primary: #111111;
+  --text-secondary: #555555;
   --text-inverse: #ffffff;
-  --text-inverse-secondary: #dfcfc5;
+  --text-inverse-secondary: #cccccc;
   
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
@@ -75,24 +75,24 @@ button {
 }
 
 .btn-primary {
-  background-color: var(--gold);
+  background-color: var(--brand);
   color: var(--bg-dark);
 }
 
 .btn-primary:hover {
-  background-color: var(--gold-hover);
+  background-color: var(--brand-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 255, 6, 0.3);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
+  color: var(--brand);
+  border: 1px solid var(--brand);
 }
 
 .btn-outline:hover {
-  background-color: var(--gold);
+  background-color: var(--brand);
   color: var(--bg-dark);
 }
 
