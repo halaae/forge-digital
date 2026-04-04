@@ -71,8 +71,8 @@ export default function Services() {
     },
     {
       icon: <Zap size={40} strokeWidth={1.5} />,
-      title: 'Express Resume (6 Hours)',
-      desc: 'Facing an abrupt deadline? Flawless, interview-ready transformation perfectly formatted and delivered to your inbox in under 6 hours.'
+      title: 'Express Resume',
+      desc: <>Facing an abrupt deadline? Flawless, interview-ready transformation perfectly formatted and delivered to your inbox in under <strong>6 hours</strong>.</>
     }
   ];
 
