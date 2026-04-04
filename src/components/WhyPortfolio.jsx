@@ -31,9 +31,8 @@ export default function WhyPortfolio() {
             <p style={{ fontSize: '1.25rem', lineHeight: 1.8 }}>
               LinkedIn is the modern rolodex. If your profile isn't optimized, you're invisible to the people who matter most in your industry.
             </p>
-            <span className="stat-highlight reveal">87%</span>
-            <p style={{ marginTop: '0.5rem', fontWeight: 600, fontSize: '1.2rem' }}>
-              of recruiters use LinkedIn to find candidates.
+            <p style={{ marginTop: '1.5rem', fontSize: '1.25rem', lineHeight: 1.8, fontWeight: 500 }}>
+              <strong>87%</strong> of recruiters use LinkedIn to find candidates.
             </p>
           </div>
           <div className="image-content reveal" style={{ direction: 'ltr', transitionDelay: '0.2s' }}>

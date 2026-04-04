@@ -10,9 +10,8 @@ export default function WhyAts() {
             An Applicant Tracking System (ATS) scans CVs for keywords and formatting. 
             If your layout is complex, the system can't read it, and you get automatically rejected.
           </p>
-          <span className="stat-highlight reveal">75%</span>
-          <p style={{ marginTop: '0.5rem', fontWeight: 500 }}>
-            of resumes are rejected by an ATS before a human ever reads them.
+          <p style={{ marginTop: '1.5rem', fontWeight: 500 }}>
+            <strong>75%</strong> of resumes are rejected by an ATS before a human ever reads them.
           </p>
           <p style={{ marginTop: '1.5rem' }}>
             Hover to see the transformation. We strip away the unreadable elements while maintaining an elegant, premium look that recruiters love.
