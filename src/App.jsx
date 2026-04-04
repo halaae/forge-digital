@@ -7,6 +7,8 @@ import Services from './components/Services';
 import TypewriterCover from './components/TypewriterCover';
 import WhyAts from './components/WhyAts';
 import AtsScrambler from './components/AtsScrambler';
+import XRayScanner from './components/XRayScanner';
+import RadarChart from './components/RadarChart';
 import WhyPortfolio from './components/WhyPortfolio';
 import ChooseUs from './components/ChooseUs';
 import Contact from './components/Contact';
@@ -49,7 +51,9 @@ function App() {
         <Services />
         <TypewriterCover />
         <WhyAts />
+        <XRayScanner />
         <AtsScrambler />
+        <RadarChart />
         <WhyPortfolio />
         <ChooseUs />
       </main>
