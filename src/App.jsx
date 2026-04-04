@@ -51,7 +51,7 @@ function App() {
       </main>
       <Contact />
       
-      <a href="https://wa.me/918848524175" target="_blank" rel="noopener noreferrer" className="sticky-whatsapp reveal" style={{ transitionDelay: '1s' }}>
+      <a href="https://wa.me/918848524175" target="_blank" rel="noopener noreferrer" className="sticky-whatsapp">
         <MessageCircle size={32} strokeWidth={1.5} />
       </a>
     </div>
