@@ -42,7 +42,7 @@ export default function Transformation() {
           style={{
              position: 'relative',
              width: '100%',
-             maxWidth: '600px',
+             maxWidth: '430px', /* Brutally restricted for elegance */
              aspectRatio: '1 / 1.414',
              margin: '0 auto',
              borderRadius: '12px',
