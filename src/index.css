@@ -1,14 +1,14 @@
 :root {
-  --brand: #A0522D;
-  --brand-hover: #8B4513;
-  --bg-dark: #3E2723;
-  --bg-darker: #2D1A11;
+  --brand: #8B4513; /* Rich, darker saddle brown */
+  --brand-hover: #6E320A; /* Deep mahogany for hover */
+  --bg-dark: #36221E; /* Deeper espresso background */
+  --bg-darker: #211310; /* Near-black espresso */
   --bg-light: #ffffff;
   --bg-gray: #FAF5F0;
   --text-primary: #2e1c15;
-  --text-secondary: #5c453c;
+  --text-secondary: #4a332a;
   --text-inverse: #ffffff;
-  --text-inverse-secondary: #dfcfc5;
+  --text-inverse-secondary: #d4c2bb;
   
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
