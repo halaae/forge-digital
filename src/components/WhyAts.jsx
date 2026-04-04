@@ -16,6 +16,9 @@ export default function WhyAts() {
           <p style={{ marginTop: '1.5rem' }}>
             Hover to explore our portfolio. We build strictly compliant, minimalist resumes that glide through automated filters while retaining a pristine, premium aesthetic when they land on a recruiter's desk.
           </p>
+          <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'var(--brand)', display: 'inline-flex', padding: '0.5rem 1rem', borderRadius: '4px', letterSpacing: '0.5px' }}>
+            <span style={{ color: 'var(--bg-light)', fontWeight: 600, fontSize: '0.9rem' }}>DELIVERED IN BOTH PDF & EDITABLE WORD FORMATS</span>
+          </div>
         </div>
 
         <div className="reveal">
