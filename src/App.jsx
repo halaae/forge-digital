@@ -4,7 +4,9 @@ import { MessageCircle } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import TypewriterCover from './components/TypewriterCover';
 import WhyAts from './components/WhyAts';
+import AtsScrambler from './components/AtsScrambler';
 import WhyPortfolio from './components/WhyPortfolio';
 import ChooseUs from './components/ChooseUs';
 import Contact from './components/Contact';
@@ -45,7 +47,9 @@ function App() {
         <Hero />
         <Marquee />
         <Services />
+        <TypewriterCover />
         <WhyAts />
+        <AtsScrambler />
         <WhyPortfolio />
         <ChooseUs />
       </main>
