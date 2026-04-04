@@ -52,10 +52,26 @@
 .nav-links a {
   font-weight: 600;
   font-size: 1.1rem;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--brand);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--brand);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .mobile-menu-btn {
@@ -156,6 +172,26 @@
 }
 
 /* Services */
+
+@keyframes floatGentle {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.image-content {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.image-content img {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.image-content img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 30px 60px rgba(160, 82, 45, 0.2) !important;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -383,6 +419,12 @@
   transform: translateY(-5px);
 }
 
+@keyframes breather {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
 .contact-icon {
   width: 80px;
   height: 80px;
@@ -392,6 +434,7 @@
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  animation: breather 4s ease-in-out infinite;
 }
 
 .contact-number {
