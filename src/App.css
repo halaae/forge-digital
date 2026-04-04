@@ -513,3 +513,58 @@
   }
   .contact-section h2 { font-size: 1.8rem !important; }
 }
+
+/* Extraordinary UI Features */
+.marquee-container {
+  overflow: hidden;
+  background-color: var(--brand);
+  color: var(--bg-gray);
+  padding: 1.5rem 0;
+  display: flex;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: scrollText 45s linear infinite;
+  gap: 4rem;
+  padding-left: 4rem;
+}
+
+.marquee-item {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+@keyframes scrollText {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } 
+}
+
+.sticky-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--brand);
+  color: var(--bg-light);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(160, 82, 45, 0.4);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sticky-whatsapp:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 25px 45px rgba(160, 82, 45, 0.6);
+  color: var(--bg-light);
+  background-color: var(--brand-hover);
+}

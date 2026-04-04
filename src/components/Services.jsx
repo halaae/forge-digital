@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { FileText, Mail, Briefcase, Network } from 'lucide-react';
+import { FileText, Mail, Briefcase, Network, Zap } from 'lucide-react';
 
 const InteractiveCard = ({ icon, title, desc }) => {
   const cardRef = useRef(null);
@@ -68,6 +68,11 @@ export default function Services() {
       icon: <Briefcase size={40} strokeWidth={1.5} />,
       title: 'Portfolio Building',
       desc: 'Showcase your best work with visually stunning digital portfolios.'
+    },
+    {
+      icon: <Zap size={40} strokeWidth={1.5} />,
+      title: 'Express Resume (6 Hours)',
+      desc: 'Facing an abrupt deadline? Flawless, interview-ready transformation perfectly formatted and delivered to your inbox in under 6 hours.'
     }
   ];
 
