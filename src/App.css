@@ -253,12 +253,11 @@
   line-height: 1.6;
 }
 
-/* 3D Resume Stackbody {
-  font-family: var(--font-body);
-  background-color: transparent;
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
+/* 3D Resume Stack */
+.resume-stack-section {
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+  overflow: hidden;
 }
 
 .resume-stack-section .text-content h2 {
