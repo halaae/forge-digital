@@ -133,6 +133,8 @@
   text-align: center;
   padding-top: 5rem;
   background: transparent;
+  position: relative;
+  z-index: 10;
 }
 
 .hero-content {
@@ -599,7 +601,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -10;
+  z-index: 0;
   overflow: hidden;
   background-color: var(--bg-gray);
   pointer-events: none;
