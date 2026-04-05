@@ -3,6 +3,7 @@ import { useScrollReveal } from './hooks/useScrollReveal';
 import { MessageCircle } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import AmbientBackground from './components/AmbientBackground';
 import Services from './components/Services';
 import WhyAts from './components/WhyAts';
 import WhyPortfolio from './components/WhyPortfolio';
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <AmbientBackground />
       <Header />
       <main>
         <Hero />
