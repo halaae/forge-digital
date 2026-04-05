@@ -51,8 +51,13 @@ export default function Services() {
   const services = [
     {
       icon: <FileText size={40} strokeWidth={1.5} />,
-      title: 'ATS-Friendly CV',
+      title: 'ATS Friendly CV',
       desc: 'Optimized for Applicant Tracking Systems to ensure human eyes see your skills.'
+    },
+    {
+      icon: <Zap size={40} strokeWidth={1.5} />,
+      title: 'Express Resume',
+      desc: <>Facing an abrupt deadline? Flawless, interview ready transformation perfectly formatted and delivered to your inbox in under <strong>6 hours</strong>.</>
     },
     {
       icon: <Mail size={40} strokeWidth={1.5} />,
@@ -68,11 +73,6 @@ export default function Services() {
       icon: <Briefcase size={40} strokeWidth={1.5} />,
       title: 'Portfolio Building',
       desc: 'Showcase your best work with visually stunning digital portfolios.'
-    },
-    {
-      icon: <Zap size={40} strokeWidth={1.5} />,
-      title: 'Express Resume',
-      desc: <>Facing an abrupt deadline? Flawless, interview-ready transformation perfectly formatted and delivered to your inbox in under <strong>6 hours</strong>.</>
     }
   ];
 

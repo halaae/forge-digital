@@ -5,7 +5,7 @@ export default function WhyAts() {
     <section id="why-ats" className="resume-stack-section">
       <div className="container split-layout">
         <div className="text-content reveal">
-          <h2>Why ATS-Friendly?</h2>
+          <h2>Why ATS Friendly?</h2>
           <p>
             An Applicant Tracking System (ATS) scans CVs for keywords and formatting. 
             If your layout is complex, the system can't read it, and you get automatically rejected.

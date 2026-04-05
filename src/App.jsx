@@ -4,7 +4,6 @@ import { MessageCircle } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import TypewriterCover from './components/TypewriterCover';
 import WhyAts from './components/WhyAts';
 import WhyPortfolio from './components/WhyPortfolio';
 import ChooseUs from './components/ChooseUs';
@@ -13,15 +12,15 @@ import './App.css';
 
 const Marquee = () => {
   const testimonials = [
-    "✦ ATS-Optimized Resumes",
-    "✦ Data-Driven Cover Letters",
+    "✦ ATS Optimized Resumes",
+    "✦ Data Driven Cover Letters",
     "✦ Executive Profile Makeovers",
     "✦ Premium Digital Portfolios",
-    "✦ High-Impact Keyword Targeting",
+    "✦ High Impact Keyword Targeting",
     "✦ Modern Minimalist Aesthetics",
-    "✦ Express 6-Hour Delivery Available",
+    "✦ Express 6 Hour Delivery Available",
     "✦ LinkedIn Algorithm Optimization",
-    "✦ ATS-Optimized Resumes",
+    "✦ ATS Optimized Resumes",
     "✦ Executive Profile Makeovers"
   ];
 
@@ -46,7 +45,6 @@ function App() {
         <Hero />
         <Marquee />
         <Services />
-        <TypewriterCover />
         <WhyAts />
         <WhyPortfolio />
         <ChooseUs />

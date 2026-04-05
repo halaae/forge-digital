@@ -10,7 +10,7 @@ export default function ChooseUs() {
     },
     {
       icon: <Users size={28} />,
-      title: 'Industry-Expert Writers',
+      title: 'Industry Expert Writers',
       desc: 'We match you with professionals who understand the specific keywords and expectations of your target sector.'
     },
     {
