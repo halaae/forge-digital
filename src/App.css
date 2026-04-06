@@ -549,8 +549,8 @@
 /* Extraordinary UI Features */
 .marquee-container {
   overflow: hidden;
-  background-color: var(--brand);
-  color: var(--bg-gray);
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
   padding: 1.5rem 0;
   display: flex;
   position: relative;
