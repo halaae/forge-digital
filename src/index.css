@@ -1,14 +1,14 @@
 :root {
-  --brand: #B85C38; /* Rich striking copper for buttons and marquee */
-  --brand-hover: #9C4A22; /* Deeper copper for hover states */
-  --bg-dark: #36221E; /* Deeper espresso background (kept from previous tweak) */
-  --bg-darker: #211310; /* Near-black espresso (kept from previous tweak) */
+  --brand: #2E8B57; /* Radiant Emerald */
+  --brand-hover: #1B5E20; /* Deep Forest Green */
+  --bg-dark: #1a2620; /* Dark Charcoal Green */
+  --bg-darker: #101713; /* Near-black green */
   --bg-light: #ffffff;
-  --bg-gray: #FAF5F0;
-  --text-primary: #2e1c15;
-  --text-secondary: #4a332a;
+  --bg-gray: #F4F6F8; /* Cool minimal gray */
+  --text-primary: #1A202C; /* Clean slate gray */
+  --text-secondary: #4A5568; 
   --text-inverse: #ffffff;
-  --text-inverse-secondary: #d4c2bb;
+  --text-inverse-secondary: #E2E8F0;
   
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;

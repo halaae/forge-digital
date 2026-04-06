@@ -7,10 +7,10 @@
   left: 0;
   width: 100%;
   padding: 1.5rem 0;
-  background-color: rgba(250, 245, 240, 0.85);
+  background-color: rgba(244, 246, 248, 0.85);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(184, 92, 56, 0.1);
+  border-bottom: 1px solid rgba(46, 139, 87, 0.1);
   transition: var(--transition);
 }
 
@@ -28,19 +28,26 @@
 
 .logo-main {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.8rem;
+  font-weight: 600;
   line-height: 1;
-  color: var(--text-primary);
-  text-transform: uppercase;
+  text-transform: none;
+  background: linear-gradient(to right, #4CAF50, #1B5E20);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 3px;
 }
 
 .logo-sub {
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.5em;
-  color: var(--brand);
-  margin-top: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  color: #1B5E20;
+  margin-top: -8px;
+  text-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -393,8 +400,8 @@
 
 .feature-row:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-  border-color: rgba(160, 82, 45, 0.3);
+  box-shadow: 0 15px 35px rgba(46, 139, 87, 0.08);
+  border-color: rgba(46, 139, 87, 0.3);
 }
 
 .feature-icon {
@@ -468,7 +475,7 @@
 
 .contact-link:hover .contact-icon {
   border-color: var(--brand);
-  background: rgba(201, 168, 76, 0.1);
+  background: rgba(46, 139, 87, 0.1);
 }
 
 /* Responsive */
@@ -493,8 +500,8 @@
 }
 
 @media (max-width: 768px) {
-  .logo-main { font-size: 1.6rem !important; }
-  .logo-sub { font-size: 0.5rem !important; }
+  .logo-main { font-size: 2.2rem !important; }
+  .logo-sub { font-size: 0.6rem !important; margin-top: -4px !important; }
   
   .hero { padding-top: 5rem !important; min-height: 80vh !important; }
   .hero h1 { font-size: 2.8rem !important; margin-bottom: 1.2rem !important; letter-spacing: -1px !important; }
@@ -531,10 +538,10 @@
 @media (max-width: 480px) {
   .hero h1 { font-size: 2.2rem !important; }
   .resume-stack-container {
-    transform: scale(0.45) !important;
-    height: 280px !important;
-    margin-top: -1rem !important;
-    margin-bottom: -2rem !important;
+    transform: scale(0.42) !important;
+    height: 250px !important;
+    margin-top: -1.5rem !important;
+    margin-bottom: -2.5rem !important;
   }
   .contact-section h2 { font-size: 1.8rem !important; }
 }
@@ -582,14 +589,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 15px 35px rgba(160, 82, 45, 0.4);
+  box-shadow: 0 15px 35px rgba(46, 139, 87, 0.3);
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .sticky-whatsapp:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 25px 45px rgba(160, 82, 45, 0.6);
+  box-shadow: 0 25px 45px rgba(46, 139, 87, 0.5);
   color: var(--bg-light);
   background-color: var(--brand-hover);
 }
@@ -618,7 +625,7 @@
 .orb-1 {
   width: 650px;
   height: 650px;
-  background-color: rgba(184, 92, 56, 0.15);
+  background-color: rgba(46, 139, 87, 0.15);
   top: -100px;
   left: -100px;
   animation-delay: 0s;
@@ -628,7 +635,7 @@
 .orb-2 {
   width: 550px;
   height: 550px;
-  background-color: rgba(54, 34, 30, 0.12);
+  background-color: rgba(27, 94, 32, 0.12);
   bottom: -50px;
   right: -50px;
   animation-delay: -5s;
@@ -638,7 +645,7 @@
 .orb-3 {
   width: 450px;
   height: 450px;
-  background-color: rgba(184, 92, 56, 0.1);
+  background-color: rgba(76, 175, 80, 0.1);
   top: 35%;
   left: 30%;
   animation-delay: -10s;
