@@ -213,18 +213,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .service-card-interactive {
   padding: 3rem 2.5rem;
   background: rgba(255, 255, 255, 0.6);
@@ -487,7 +475,8 @@
   color: var(--brand);
 }
 
-/* Responsive */
+/* ========== RESPONSIVE ========== */
+
 @media (max-width: 900px) {
   .split-layout {
     grid-template-columns: 1fr;
@@ -509,126 +498,196 @@
 }
 
 @media (max-width: 768px) {
-  .logo-main { font-size: 2rem !important; }
-  .logo-sub { font-size: 0.55rem !important; margin-top: 0px !important; letter-spacing: 0.35em !important; }
-  
-  .hero { padding-top: 5rem !important; min-height: 70vh !important; }
-  .hero h1 { font-size: 2.4rem !important; margin-bottom: 1rem !important; letter-spacing: -1px !important; }
-  .hero p { font-size: 0.95rem !important; padding: 0 1rem !important; }
+  /* Header - compact and clean */
+  .header {
+    padding: 0.7rem 0 !important;
+  }
+  .logo-main { font-size: 1.6rem !important; line-height: 1.2 !important; }
+  .logo-sub { font-size: 0.45rem !important; margin-top: 0px !important; letter-spacing: 0.3em !important; }
   
   .nav-links { display: none !important; }
   .mobile-menu-btn { display: block !important; }
   
-  /* Services cards - clean 2-column on tablet */
+  /* Hero */
+  .hero { padding-top: 4.5rem !important; min-height: 65vh !important; }
+  .hero h1 { font-size: 2.2rem !important; margin-bottom: 1rem !important; letter-spacing: -1px !important; }
+  .hero p { font-size: 0.95rem !important; padding: 0 0.5rem !important; }
+  
+  /* Sections - tighter vertical rhythm */
+  section { padding: 2.5rem 0 !important; }
+  
+  /* Services cards - always 2-column, compact */
   .services-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
-    margin-top: 2.5rem !important;
+    gap: 0.7rem !important;
+    margin-top: 1.5rem !important;
   }
   
   .service-card-interactive {
-    padding: 1.8rem 1.4rem !important;
+    padding: 1.2rem 1rem !important;
   }
   
   .service-card-interactive h3 {
-    font-size: 1.1rem !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 0.4rem !important;
   }
   
   .service-card-interactive p {
-    font-size: 0.85rem !important;
-    line-height: 1.5 !important;
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  .service-icon {
+    margin-bottom: 0.7rem !important;
   }
   
   .service-icon svg {
-    width: 28px !important;
-    height: 28px !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  /* Section headings */
+  section h2 {
+    font-size: 1.8rem !important;
   }
   
   /* ATS Resume Section */
-  .resume-stack-section .text-content h2 { font-size: 2rem !important; }
-  .resume-stack-section .text-content p { font-size: 0.95rem !important; }
+  .resume-stack-section .text-content h2 { font-size: 1.8rem !important; }
+  .resume-stack-section .text-content p { font-size: 0.9rem !important; }
   
   .resume-stack-container {
     transform: scale(0.55) !important;
-    height: 350px !important;
+    height: 320px !important;
     transform-origin: center !important;
     margin-top: -1rem !important;
   }
   
-  .service-card {
-    padding: 2rem 1.2rem !important;
+  /* Split layouts text */
+  .split-layout .text-content h2 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .split-layout .text-content p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
   
-  .feature-row {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 1rem !important;
+  /* Why Portfolio / LinkedIn images */
+  .image-content img {
+    max-width: 320px !important;
+  }
+  
+  .service-card {
     padding: 1.5rem 1rem !important;
   }
   
+  /* Choose Us rows */
+  .feature-row {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.8rem !important;
+    padding: 1.2rem 1rem !important;
+  }
+  
+  .features-container {
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+  }
+  
   /* Contact section mobile */
-  .contact-section h2 { font-size: 2rem !important; }
+  .contact-section h2 { font-size: 1.8rem !important; }
   .contact-links { 
     flex-direction: row !important; 
     flex-wrap: wrap !important;
-    gap: 2rem !important;
+    gap: 1.5rem !important;
     justify-content: center !important;
   }
   .contact-link {
-    width: 45% !important;
+    width: 42% !important;
     text-align: center !important;
   }
   .contact-icon {
-    width: 60px !important;
-    height: 60px !important;
+    width: 55px !important;
+    height: 55px !important;
   }
   .contact-number {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
   .contact-link span {
-    font-size: 0.85rem !important;
+    font-size: 0.75rem !important;
     word-break: break-all !important;
+  }
+  
+  /* Marquee */
+  .marquee-item {
+    font-size: 1rem !important;
+  }
+  .marquee-container {
+    padding: 1rem 0 !important;
+  }
+  
+  /* Sticky WhatsApp */
+  .sticky-whatsapp {
+    width: 52px !important;
+    height: 52px !important;
+    bottom: 1.2rem !important;
+    right: 1.2rem !important;
+  }
+  .sticky-whatsapp svg {
+    width: 24px !important;
+    height: 24px !important;
   }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 2rem !important; }
-  .hero p { font-size: 0.9rem !important; }
+  .logo-main { font-size: 1.4rem !important; }
+  .logo-sub { font-size: 0.4rem !important; letter-spacing: 0.25em !important; }
+  
+  .hero h1 { font-size: 1.8rem !important; }
+  .hero p { font-size: 0.85rem !important; }
+  .hero .btn { font-size: 0.85rem !important; padding: 0.6rem 1.5rem !important; }
 
-  /* Services - single column on small phones */
+  /* Services - keep 2-column, even more compact */
   .services-grid {
-    grid-template-columns: 1fr !important;
-    gap: 0.8rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
   }
 
   .service-card-interactive {
-    padding: 1.5rem 1.2rem !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 1rem !important;
-    text-align: left !important;
+    padding: 1rem 0.8rem !important;
   }
   
-  .service-card-interactive .card-interior {
-    display: flex !important;
-    align-items: center !important;
-    gap: 1rem !important;
+  .service-card-interactive h3 {
+    font-size: 0.85rem !important;
   }
   
-  .service-card-interactive .service-icon {
-    flex-shrink: 0 !important;
+  .service-card-interactive p {
+    font-size: 0.7rem !important;
+    line-height: 1.35 !important;
+  }
+  
+  .service-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .service-icon {
+    margin-bottom: 0.5rem !important;
   }
 
   .resume-stack-container {
     transform: scale(0.4) !important;
-    height: 230px !important;
+    height: 220px !important;
     margin-top: -2rem !important;
     margin-bottom: -3rem !important;
   }
   
-  .contact-section h2 { font-size: 1.6rem !important; }
+  .split-layout .text-content h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  .contact-section h2 { font-size: 1.5rem !important; }
   .contact-link {
-    width: 45% !important;
+    width: 42% !important;
   }
 }
 
