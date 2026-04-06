@@ -6,17 +6,17 @@ export default function WhyAts() {
       <div className="container split-layout">
         <div className="text-content reveal">
           <h2>Why ATS Friendly?</h2>
-          <p style={{ color: '#ffffff' }}>
+          <p>
             An Applicant Tracking System (ATS) scans CVs for keywords and formatting. 
             If your layout is complex, the system can't read it, and you get automatically rejected.
           </p>
-          <p style={{ marginTop: '1.5rem', fontWeight: 500, color: '#ffffff' }}>
+          <p style={{ marginTop: '1.5rem', fontWeight: 500 }}>
             <strong>75%</strong> of resumes are rejected by an ATS before a human ever reads them.
           </p>
-          <p style={{ marginTop: '1.5rem', color: '#E2E8F0' }}>
+          <p style={{ marginTop: '1.5rem' }}>
             Hover to explore our portfolio. We build strictly compliant, minimalist resumes that glide through automated filters while retaining a pristine, premium aesthetic when they land on a recruiter's desk.
           </p>
-          <p style={{ marginTop: '1.5rem', color: '#E2E8F0', fontSize: '0.95rem', fontWeight: 500, letterSpacing: '0.5px' }}>
+          <p style={{ marginTop: '1.5rem', fontSize: '0.95rem', fontWeight: 500, letterSpacing: '0.5px' }}>
             Delivered in both PDF and editable Word formats.
           </p>
         </div>

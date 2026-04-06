@@ -30,13 +30,13 @@
   font-family: var(--font-heading);
   font-size: 2.8rem;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.15;
   text-transform: none;
   background: linear-gradient(to right, #4CAF50, #1B5E20);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-bottom: 3px;
+  padding-bottom: 0;
 }
 
 .logo-sub {
@@ -45,7 +45,7 @@
   font-weight: 600;
   letter-spacing: 0.45em;
   color: #1B5E20;
-  margin-top: 2px;
+  margin-top: 0;
   text-transform: uppercase;
 }
 
@@ -263,8 +263,8 @@
 
 /* 3D Resume Stack */
 .resume-stack-section {
-  background-color: var(--bg-dark);
-  color: var(--text-inverse);
+  background-color: var(--bg-gray);
+  color: var(--text-primary);
   overflow: hidden;
 }
 
@@ -276,7 +276,7 @@
 
 .resume-stack-section .text-content p {
   font-size: 1.15rem;
-  color: var(--text-inverse-secondary);
+  color: var(--text-secondary);
 }
 
 .split-layout {
@@ -418,19 +418,20 @@
 /* Contact Section */
 .contact-section {
   text-align: center;
-  background-color: var(--bg-darker);
-  color: #ffffff;
+  background-color: var(--bg-gray);
+  color: var(--text-primary);
 }
 
 .contact-section p,
 .contact-section span,
 .contact-section a {
-  color: #E2E8F0;
+  color: var(--text-secondary);
 }
 
 .contact-section h2 {
   font-size: 3.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
 .contact-links {
@@ -445,11 +446,11 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  color: #E2E8F0 !important;
+  color: var(--text-primary) !important;
 }
 
 .contact-link:hover {
-  color: var(--brand);
+  color: var(--brand) !important;
   transform: translateY(-5px);
 }
 
@@ -462,13 +463,14 @@
 .contact-icon {
   width: 80px;
   height: 80px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(26, 32, 44, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
   animation: breather 4s ease-in-out infinite;
+  color: var(--text-primary);
 }
 
 .contact-number {
@@ -476,12 +478,13 @@
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
 }
 
 .contact-link:hover .contact-icon {
   border-color: var(--brand);
-  background: rgba(46, 139, 87, 0.1);
+  background: rgba(46, 139, 87, 0.08);
+  color: var(--brand);
 }
 
 /* Responsive */
@@ -506,24 +509,50 @@
 }
 
 @media (max-width: 768px) {
-  .logo-main { font-size: 2.2rem !important; }
-  .logo-sub { font-size: 0.6rem !important; margin-top: 0px !important; }
+  .logo-main { font-size: 2rem !important; }
+  .logo-sub { font-size: 0.55rem !important; margin-top: 0px !important; letter-spacing: 0.35em !important; }
   
-  .hero { padding-top: 5rem !important; min-height: 80vh !important; }
-  .hero h1 { font-size: 2.8rem !important; margin-bottom: 1.2rem !important; letter-spacing: -1px !important; }
-  .hero p { font-size: 1rem !important; padding: 0 !important; }
+  .hero { padding-top: 5rem !important; min-height: 70vh !important; }
+  .hero h1 { font-size: 2.4rem !important; margin-bottom: 1rem !important; letter-spacing: -1px !important; }
+  .hero p { font-size: 0.95rem !important; padding: 0 1rem !important; }
   
   .nav-links { display: none !important; }
   .mobile-menu-btn { display: block !important; }
   
+  /* Services cards - clean 2-column on tablet */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    margin-top: 2.5rem !important;
+  }
+  
+  .service-card-interactive {
+    padding: 1.8rem 1.4rem !important;
+  }
+  
+  .service-card-interactive h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  .service-card-interactive p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .service-icon svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  /* ATS Resume Section */
   .resume-stack-section .text-content h2 { font-size: 2rem !important; }
-  .stat-highlight { font-size: 1.8rem !important; }
+  .resume-stack-section .text-content p { font-size: 0.95rem !important; }
   
   .resume-stack-container {
-    transform: scale(0.6) !important;
-    height: 380px !important;
+    transform: scale(0.55) !important;
+    height: 350px !important;
     transform-origin: center !important;
-    margin-top: 0 !important;
+    margin-top: -1rem !important;
   }
   
   .service-card {
@@ -537,19 +566,70 @@
     padding: 1.5rem 1rem !important;
   }
   
-  .contact-section h2 { font-size: 2.2rem !important; }
-  .contact-links { flex-direction: column !important; gap: 2.5rem !important; }
+  /* Contact section mobile */
+  .contact-section h2 { font-size: 2rem !important; }
+  .contact-links { 
+    flex-direction: row !important; 
+    flex-wrap: wrap !important;
+    gap: 2rem !important;
+    justify-content: center !important;
+  }
+  .contact-link {
+    width: 45% !important;
+    text-align: center !important;
+  }
+  .contact-icon {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .contact-number {
+    font-size: 1rem !important;
+  }
+  .contact-link span {
+    font-size: 0.85rem !important;
+    word-break: break-all !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 2.2rem !important; }
-  .resume-stack-container {
-    transform: scale(0.42) !important;
-    height: 250px !important;
-    margin-top: -1.5rem !important;
-    margin-bottom: -2.5rem !important;
+  .hero h1 { font-size: 2rem !important; }
+  .hero p { font-size: 0.9rem !important; }
+
+  /* Services - single column on small phones */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
   }
-  .contact-section h2 { font-size: 1.8rem !important; }
+
+  .service-card-interactive {
+    padding: 1.5rem 1.2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    text-align: left !important;
+  }
+  
+  .service-card-interactive .card-interior {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  
+  .service-card-interactive .service-icon {
+    flex-shrink: 0 !important;
+  }
+
+  .resume-stack-container {
+    transform: scale(0.4) !important;
+    height: 230px !important;
+    margin-top: -2rem !important;
+    margin-bottom: -3rem !important;
+  }
+  
+  .contact-section h2 { font-size: 1.6rem !important; }
+  .contact-link {
+    width: 45% !important;
+  }
 }
 
 /* Extraordinary UI Features */
