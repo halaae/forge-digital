@@ -25,11 +25,11 @@ export default function Contact() {
             <span className="contact-number">+91 8848524175</span>
           </a>
           
-          <a href="mailto:mail.forgedigital@gmail.com" className="contact-link">
+          <a href="mailto:hello.forgedigital.in@gmail.com" className="contact-link">
             <div className="contact-icon">
               <Mail size={36} strokeWidth={1.5} />
             </div>
-            <span>mail.forgedigital@gmail.com</span>
+            <span>hello.forgedigital.in@gmail.com</span>
           </a>
           
           <a href="https://instagram.com/the_forge.digital" target="_blank" rel="noopener noreferrer" className="contact-link">
