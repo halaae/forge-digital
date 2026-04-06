@@ -420,7 +420,13 @@
 .contact-section {
   text-align: center;
   background-color: var(--bg-darker);
-  color: var(--text-inverse);
+  color: #ffffff;
+}
+
+.contact-section p,
+.contact-section span,
+.contact-section a {
+  color: #E2E8F0;
 }
 
 .contact-section h2 {
@@ -440,7 +446,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  color: var(--text-inverse-secondary);
+  color: #E2E8F0 !important;
 }
 
 .contact-link:hover {
@@ -471,6 +477,7 @@
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 1px;
+  color: #ffffff !important;
 }
 
 .contact-link:hover .contact-icon {
