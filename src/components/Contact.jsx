@@ -6,6 +6,9 @@ export default function Contact() {
     <section id="contact" className="contact-section">
       <div className="container reveal">
         <h2>Let's Build Your Future</h2>
+        <p style={{ maxWidth: '600px', margin: '0 auto 3rem auto', color: 'var(--text-inverse-secondary)', fontSize: '1.15rem', lineHeight: '1.6' }}>
+          Ready to elevate your career? Connect with us through Instagram, Email, or WhatsApp to discuss your executive profile, resume transformation, or portfolio.
+        </p>
         
         <div className="contact-links">
           <a href="tel:8848524175" className="contact-link">
