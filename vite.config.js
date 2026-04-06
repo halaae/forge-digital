@@ -4,4 +4,11 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  css: {
+    transformer: 'postcss',
+  },
+  build: {
+    cssMinify: 'lightningcss',
+    cssTarget: ['safari14', 'ios14', 'chrome80'],
+  },
 })
