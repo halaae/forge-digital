@@ -1,6 +1,12 @@
 /* src/App.css */
 /* Custom Component Styles */
 
+.app-container {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -477,16 +483,22 @@
 
 /* ========== RESPONSIVE ========== */
 
+/* --- TABLETS (901px and below) --- */
 @media (max-width: 900px) {
   .split-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+    direction: ltr !important;
   }
   
+  .split-layout > * {
+    direction: ltr !important;
+  }
+
   .resume-stack-container {
     margin: 0 auto;
-    transform: scale(0.85);
+    transform: scale(0.7);
   }
   
   .resume-stack-container:hover .resume-card-plain {
@@ -497,198 +509,317 @@
   }
 }
 
+/* --- MOBILE: All phones (768px and below) --- */
 @media (max-width: 768px) {
-  /* Header - compact and clean */
+
+  /* ===== GLOBAL OVERFLOW KILL ===== */
+  html, body, #root, .app-container, main, section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* ===== HEADER ===== */
   .header {
-    padding: 0.7rem 0 !important;
+    padding: 0.6rem 0 !important;
   }
-  .logo-main { font-size: 1.6rem !important; line-height: 1.2 !important; }
-  .logo-sub { font-size: 0.45rem !important; margin-top: 0px !important; letter-spacing: 0.3em !important; }
-  
-  .nav-links { display: none !important; }
-  .mobile-menu-btn { display: block !important; }
-  
-  /* Hero */
-  .hero { padding-top: 4.5rem !important; min-height: 65vh !important; }
-  .hero h1 { font-size: 2.2rem !important; margin-bottom: 1rem !important; letter-spacing: -1px !important; }
-  .hero p { font-size: 0.95rem !important; padding: 0 0.5rem !important; }
-  
-  /* Sections - tighter vertical rhythm */
-  section { padding: 2.5rem 0 !important; }
-  
-  /* Services cards - always 2-column, compact */
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.7rem !important;
-    margin-top: 1.5rem !important;
+  .header .container {
+    padding: 0 1rem !important;
   }
-  
-  .service-card-interactive {
-    padding: 1.2rem 1rem !important;
+  .logo-main {
+    font-size: 1.5rem !important;
+    line-height: 1.15 !important;
   }
-  
-  .service-card-interactive h3 {
-    font-size: 0.95rem !important;
-    margin-bottom: 0.4rem !important;
+  .logo-sub {
+    font-size: 0.42rem !important;
+    margin-top: 0 !important;
+    letter-spacing: 0.28em !important;
   }
-  
-  .service-card-interactive p {
-    font-size: 0.75rem !important;
-    line-height: 1.4 !important;
+  .nav-links,
+  .nav-links.desktop-nav {
+    display: none !important;
   }
-  
-  .service-icon {
-    margin-bottom: 0.7rem !important;
+  .mobile-menu-btn {
+    display: block !important;
   }
-  
-  .service-icon svg {
-    width: 24px !important;
-    height: 24px !important;
+
+  /* ===== HERO ===== */
+  .hero {
+    padding-top: 5rem !important;
+    min-height: auto !important;
+    padding-bottom: 1.5rem !important;
   }
-  
-  /* Section headings */
-  section h2 {
-    font-size: 1.8rem !important;
-  }
-  
-  /* ATS Resume Section */
-  .resume-stack-section .text-content h2 { font-size: 1.8rem !important; }
-  .resume-stack-section .text-content p { font-size: 0.9rem !important; }
-  
-  .resume-stack-container {
-    transform: scale(0.55) !important;
-    height: 320px !important;
-    transform-origin: center !important;
-    margin-top: -1rem !important;
-  }
-  
-  /* Split layouts text */
-  .split-layout .text-content h2 {
+  .hero h1 {
     font-size: 2rem !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.8rem !important;
+    letter-spacing: -1px !important;
   }
-  .split-layout .text-content p {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-  }
-  
-  /* Why Portfolio / LinkedIn images */
-  .image-content img {
-    max-width: 320px !important;
-  }
-  
-  .service-card {
-    padding: 1.5rem 1rem !important;
-  }
-  
-  /* Choose Us rows */
-  .feature-row {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 0.8rem !important;
-    padding: 1.2rem 1rem !important;
-  }
-  
-  .features-container {
-    gap: 1rem !important;
-    margin-top: 2rem !important;
-  }
-  
-  /* Contact section mobile */
-  .contact-section h2 { font-size: 1.8rem !important; }
-  .contact-links { 
-    flex-direction: row !important; 
-    flex-wrap: wrap !important;
-    gap: 1.5rem !important;
-    justify-content: center !important;
-  }
-  .contact-link {
-    width: 42% !important;
-    text-align: center !important;
-  }
-  .contact-icon {
-    width: 55px !important;
-    height: 55px !important;
-  }
-  .contact-number {
+  .hero p {
     font-size: 0.9rem !important;
+    padding: 0 0.5rem !important;
+    margin-bottom: 1.5rem !important;
   }
-  .contact-link span {
-    font-size: 0.75rem !important;
-    word-break: break-all !important;
+  .hero .btn {
+    font-size: 0.85rem !important;
+    padding: 0.6rem 1.6rem !important;
   }
-  
-  /* Marquee */
-  .marquee-item {
-    font-size: 1rem !important;
-  }
-  .marquee-container {
-    padding: 1rem 0 !important;
-  }
-  
-  /* Sticky WhatsApp */
-  .sticky-whatsapp {
-    width: 52px !important;
-    height: 52px !important;
-    bottom: 1.2rem !important;
-    right: 1.2rem !important;
-  }
-  .sticky-whatsapp svg {
-    width: 24px !important;
-    height: 24px !important;
-  }
-}
 
-@media (max-width: 480px) {
-  .logo-main { font-size: 1.4rem !important; }
-  .logo-sub { font-size: 0.4rem !important; letter-spacing: 0.25em !important; }
-  
-  .hero h1 { font-size: 1.8rem !important; }
-  .hero p { font-size: 0.85rem !important; }
-  .hero .btn { font-size: 0.85rem !important; padding: 0.6rem 1.5rem !important; }
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 2rem 0 !important;
+  }
+  section h2 {
+    font-size: 1.6rem !important;
+  }
 
-  /* Services - keep 2-column, even more compact */
+  /* ===== SERVICES GRID ===== */
   .services-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.5rem !important;
+    gap: 0.6rem !important;
+    margin-top: 1.2rem !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 5th card spans full width on its own row */
+  .services-grid > .reveal:nth-child(5) {
+    grid-column: 1 / -1 !important;
   }
 
   .service-card-interactive {
     padding: 1rem 0.8rem !important;
   }
-  
   .service-card-interactive h3 {
     font-size: 0.85rem !important;
+    margin-bottom: 0.3rem !important;
   }
-  
   .service-card-interactive p {
     font-size: 0.7rem !important;
-    line-height: 1.35 !important;
-  }
-  
-  .service-icon svg {
-    width: 20px !important;
-    height: 20px !important;
+    line-height: 1.4 !important;
   }
   .service-icon {
     margin-bottom: 0.5rem !important;
   }
-
-  .resume-stack-container {
-    transform: scale(0.4) !important;
-    height: 220px !important;
-    margin-top: -2rem !important;
-    margin-bottom: -3rem !important;
+  .service-icon svg {
+    width: 22px !important;
+    height: 22px !important;
   }
-  
-  .split-layout .text-content h2 {
+
+  /* ===== ATS RESUME SECTION ===== */
+  .resume-stack-section {
+    overflow: hidden !important;
+  }
+  .resume-stack-section .text-content h2 {
     font-size: 1.6rem !important;
   }
-  
-  .contact-section h2 { font-size: 1.5rem !important; }
-  .contact-link {
-    width: 42% !important;
+  .resume-stack-section .text-content p {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
   }
+
+  /* Flatten the 3D stack into a horizontal row on mobile */
+  .resume-stack-container {
+    perspective: none !important;
+    position: relative !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.6rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 1rem 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
+  .resume-card {
+    position: relative !important;
+    transform: none !important;
+    filter: none !important;
+    width: 30% !important;
+    height: auto !important;
+    aspect-ratio: 3/4 !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+    border-radius: 6px !important;
+  }
+  .resume-card-plain,
+  .resume-card-blue,
+  .resume-card-ats {
+    transform: none !important;
+    filter: none !important;
+    z-index: 1 !important;
+  }
+  .resume-stack-container:hover .resume-card-plain,
+  .resume-stack-container:hover .resume-card-blue,
+  .resume-stack-container:hover .resume-card-ats {
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* ===== SPLIT LAYOUTS ===== */
+  .split-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    text-align: center !important;
+    direction: ltr !important;
+  }
+  .split-layout > * {
+    direction: ltr !important;
+  }
+  .split-layout .text-content h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .split-layout .text-content p {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ===== PORTFOLIO / LINKEDIN IMAGES ===== */
+  .image-content {
+    animation: none !important;
+  }
+  .image-content img {
+    max-width: 280px !important;
+    width: 70% !important;
+    margin: 0 auto !important;
+    display: block !important;
+    border-radius: 10px !important;
+  }
+
+  /* ===== STAT HIGHLIGHT ===== */
+  .stat-highlight {
+    font-size: 1.8rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* ===== CHOOSE US ===== */
+  .feature-row {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.6rem !important;
+    padding: 1rem 0.8rem !important;
+  }
+  .features-container {
+    gap: 0.8rem !important;
+    margin-top: 1.5rem !important;
+  }
+  .feature-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .feature-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .feature-row h3 {
+    font-size: 1rem !important;
+  }
+  .feature-row p {
+    font-size: 0.8rem !important;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-section h2 {
+    font-size: 1.6rem !important;
+  }
+  .contact-section > .container > p {
+    font-size: 0.85rem !important;
+  }
+  .contact-links {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.2rem !important;
+    justify-items: center !important;
+  }
+  .contact-link {
+    width: 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .contact-icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .contact-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .contact-number {
+    font-size: 0.8rem !important;
+  }
+  .contact-link span {
+    font-size: 0.7rem !important;
+    word-break: break-all !important;
+  }
+
+  /* ===== MARQUEE ===== */
+  .marquee-container {
+    padding: 0.8rem 0 !important;
+  }
+  .marquee-item {
+    font-size: 0.9rem !important;
+  }
+  .marquee-content {
+    gap: 2rem !important;
+    padding-left: 2rem !important;
+  }
+
+  /* ===== STICKY WHATSAPP ===== */
+  .sticky-whatsapp {
+    width: 48px !important;
+    height: 48px !important;
+    bottom: 1rem !important;
+    right: 1rem !important;
+  }
+  .sticky-whatsapp svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+/* --- SMALL PHONES (480px and below) --- */
+@media (max-width: 480px) {
+  .logo-main { font-size: 1.3rem !important; }
+  .logo-sub { font-size: 0.38rem !important; letter-spacing: 0.22em !important; }
+
+  .hero h1 { font-size: 1.7rem !important; }
+  .hero p { font-size: 0.82rem !important; }
+
+  .services-grid {
+    gap: 0.5rem !important;
+  }
+  .service-card-interactive {
+    padding: 0.8rem 0.6rem !important;
+  }
+  .service-card-interactive h3 {
+    font-size: 0.78rem !important;
+  }
+  .service-card-interactive p {
+    font-size: 0.65rem !important;
+    line-height: 1.35 !important;
+  }
+  .service-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .resume-card {
+    width: 28% !important;
+  }
+
+  .image-content img {
+    max-width: 220px !important;
+    width: 65% !important;
+  }
+
+  .split-layout .text-content h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .contact-section h2 { font-size: 1.3rem !important; }
 }
 
 /* Extraordinary UI Features */
