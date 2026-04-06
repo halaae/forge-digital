@@ -617,45 +617,29 @@
     line-height: 1.6 !important;
   }
 
-  /* Flatten the 3D stack into a horizontal row on mobile */
+  /* Keep original 3D stack animation but scale down to fit mobile */
   .resume-stack-container {
-    perspective: none !important;
-    position: relative !important;
-    height: auto !important;
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 0.6rem !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 1rem 0 !important;
+    transform: scale(0.5) !important;
+    transform-origin: center center !important;
+    height: 280px !important;
+    margin: -1rem auto !important;
+    overflow: visible !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  /* Wrapper to clip any overflow from the 3D transforms */
+  .resume-stack-section .reveal {
     overflow: hidden !important;
-    transform: none !important;
+    max-width: 100% !important;
   }
-  .resume-card {
-    position: relative !important;
-    transform: none !important;
-    filter: none !important;
-    width: 30% !important;
-    height: auto !important;
-    aspect-ratio: 3/4 !important;
-    flex-shrink: 0 !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
-    border-radius: 6px !important;
+
+  .resume-stack-container:hover .resume-card-plain {
+    transform: translateZ(-100px) translateX(-120px) rotateY(-10deg) !important;
+    filter: brightness(0.85) !important;
   }
-  .resume-card-plain,
-  .resume-card-blue,
-  .resume-card-ats {
-    transform: none !important;
-    filter: none !important;
-    z-index: 1 !important;
-  }
-  .resume-stack-container:hover .resume-card-plain,
-  .resume-stack-container:hover .resume-card-blue,
   .resume-stack-container:hover .resume-card-ats {
-    transform: none !important;
-    filter: none !important;
+    transform: translateZ(50px) translateX(120px) rotateY(10deg) !important;
   }
 
   /* ===== SPLIT LAYOUTS ===== */
@@ -806,8 +790,10 @@
     height: 18px !important;
   }
 
-  .resume-card {
-    width: 28% !important;
+  .resume-stack-container {
+    transform: scale(0.4) !important;
+    height: 220px !important;
+    margin: -2rem auto -1rem !important;
   }
 
   .image-content img {
