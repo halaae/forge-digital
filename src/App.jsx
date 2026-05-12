@@ -1,4 +1,5 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import { MessageCircle } from 'lucide-react';
 import Header from './components/Header';
@@ -9,6 +10,8 @@ import WhyAts from './components/WhyAts';
 import WhyPortfolio from './components/WhyPortfolio';
 import ChooseUs from './components/ChooseUs';
 import Contact from './components/Contact';
+import BlogList from './blog/BlogList';
+import BlogPost from './blog/BlogPost';
 import './App.css';
 
 const Marquee = () => {
@@ -36,7 +39,7 @@ const Marquee = () => {
   );
 };
 
-function App() {
+function HomePage() {
   useScrollReveal();
 
   return (
@@ -65,6 +68,16 @@ function App() {
         <MessageCircle size={32} strokeWidth={1.5} aria-hidden="true" />
       </a>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/blog" element={<BlogList />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
+    </Routes>
   );
 }
 
