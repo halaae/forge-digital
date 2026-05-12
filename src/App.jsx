@@ -12,6 +12,7 @@ import ChooseUs from './components/ChooseUs';
 import Contact from './components/Contact';
 import BlogList from './blog/BlogList';
 import BlogPost from './blog/BlogPost';
+import LandingPage from './landing/LandingPage';
 import './App.css';
 
 const Marquee = () => {
@@ -77,6 +78,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/blog" element={<BlogList />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
+      <Route path="/:slug" element={<LandingPage />} />
     </Routes>
   );
 }
