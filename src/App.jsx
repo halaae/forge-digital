@@ -44,13 +44,44 @@ const Marquee = () => {
 function HomePage() {
   useScrollReveal();
 
+  const homepageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Forge Digital",
+    "image": "https://theforgedigital.in/ats_resume.png",
+    "url": "https://theforgedigital.in/",
+    "telephone": "+918848524175",
+    "priceRange": "₹299 - ₹2999",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Calicut",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 11.2588,
+      "longitude": 75.7804
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://wa.me/918848524175"
+    ]
+  };
+
   return (
     <div className="app-container">
       <SEO 
-        title="ATS Resume Writing & Career Branding Service in Kerala"
-        description="Forge Digital – Kerala's top ATS resume writing service for freshers, students & professionals. Get ATS-optimized CVs, LinkedIn optimization, and digital portfolios. Starting ₹299."
+        title="ATS Resume Writing Service in Kerala & India"
+        description="Forge Digital provides ATS-friendly resume writing, LinkedIn optimization, and professional career branding services across Kerala and India. Get resumes built to pass ATS systems and attract recruiters."
         canonical="/"
-        keywords="ATS resume service Kerala, resume writing India, resume service Calicut, resume for freshers, LinkedIn optimization India, career branding, Forge Digital"
+        keywords="ATS resume service India, resume writing Kerala, professional resume service, ATS friendly resumes, LinkedIn optimization India, career branding India"
+        schema={homepageSchema}
       />
       <AmbientBackground />
       <Header />
