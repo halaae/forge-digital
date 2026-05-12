@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { FileText, Mail, Briefcase, Network, Zap } from 'lucide-react';
 
-const InteractiveCard = ({ icon, title, desc, waMessage }) => {
+const InteractiveCard = ({ icon, title, desc, waMessage, ariaLabel }) => {
   const cardRef = useRef(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -13,10 +13,10 @@ const InteractiveCard = ({ icon, title, desc, waMessage }) => {
     const height = rect.height;
     const mouseX = e.clientX - rect.left - width / 2;
     const mouseY = e.clientY - rect.top - height / 2;
-    
-    const rotateY = (mouseX / (width / 2)) * 12; 
+
+    const rotateY = (mouseX / (width / 2)) * 12;
     const rotateX = -(mouseY / (height / 2)) * 12;
-    
+
     setRotation({ x: rotateX, y: rotateY });
   };
 
@@ -28,11 +28,12 @@ const InteractiveCard = ({ icon, title, desc, waMessage }) => {
   const waLink = `https://wa.me/918848524175?text=${encodeURIComponent(waMessage)}`;
 
   return (
-    <a 
+    <a
       href={waLink}
       target="_blank"
       rel="noopener noreferrer"
       className="service-card-interactive"
+      aria-label={ariaLabel}
       ref={cardRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseMove={handleMouseMove}
@@ -48,7 +49,7 @@ const InteractiveCard = ({ icon, title, desc, waMessage }) => {
       }}
     >
       <div className="card-interior" style={{ transform: isHovered ? 'translateZ(40px)' : 'translateZ(0)', transition: 'transform 0.3s ease-out', transformStyle: 'preserve-3d' }}>
-        <div className="service-icon">{icon}</div>
+        <div className="service-icon" aria-hidden="true">{icon}</div>
         <h3>{title}</h3>
         <p>{desc}</p>
       </div>
@@ -62,48 +63,53 @@ export default function Services() {
       icon: <FileText size={40} strokeWidth={1.5} />,
       title: 'ATS Friendly CV',
       desc: 'Optimized for Applicant Tracking Systems to ensure human eyes see your skills.',
-      waMessage: 'Hey, I need an ATS Friendly Resume. Can you help me?'
+      waMessage: 'Hey, I need an ATS Friendly Resume. Can you help me?',
+      ariaLabel: 'Get an ATS Friendly CV – Chat on WhatsApp'
     },
     {
       icon: <Zap size={40} strokeWidth={1.5} />,
       title: 'Express Resume',
       desc: <>Facing an abrupt deadline? Flawless, interview ready transformation perfectly formatted and delivered to your inbox in under <strong>6 hours</strong>.</>,
-      waMessage: 'Hey, I need an Express Resume delivered urgently. Can you help me?'
+      waMessage: 'Hey, I need an Express Resume delivered urgently. Can you help me?',
+      ariaLabel: 'Get an Express Resume in 6 hours – Chat on WhatsApp'
     },
     {
       icon: <Mail size={40} strokeWidth={1.5} />,
       title: 'Cover Letter',
       desc: 'Compelling narratives that communicate your unique value proposition.',
-      waMessage: 'Hey, I need a professional Cover Letter. Can you help me?'
+      waMessage: 'Hey, I need a professional Cover Letter. Can you help me?',
+      ariaLabel: 'Get a professional Cover Letter – Chat on WhatsApp'
     },
     {
       icon: <Network size={40} strokeWidth={1.5} />,
       title: 'LinkedIn Optimization',
       desc: 'Maximize visibility and attract top recruiters natively.',
-      waMessage: 'Hey, I need LinkedIn Profile Optimization. Can you help me?'
+      waMessage: 'Hey, I need LinkedIn Profile Optimization. Can you help me?',
+      ariaLabel: 'Get LinkedIn Profile Optimization – Chat on WhatsApp'
     },
     {
       icon: <Briefcase size={40} strokeWidth={1.5} />,
       title: 'Portfolio Building',
       desc: 'Showcase your best work with visually stunning digital portfolios.',
-      waMessage: 'Hey, I need a Portfolio built for me. Can you help me?'
+      waMessage: 'Hey, I need a Portfolio built for me. Can you help me?',
+      ariaLabel: 'Get a Digital Portfolio built – Chat on WhatsApp'
     }
   ];
 
   return (
-    <section id="services" className="bg-gray">
+    <section id="services" className="bg-gray" aria-labelledby="services-heading">
       <div className="container">
         <div className="text-center reveal">
-          <h2 style={{ fontSize: '3rem', textAlign: 'center' }}>What We Forge</h2>
+          <h2 id="services-heading" style={{ fontSize: '3rem', textAlign: 'center' }}>What We Forge</h2>
           <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginTop: '1rem' }}>
             Elevate every aspect of your professional presentation.
           </p>
         </div>
-        
-        <div className="services-grid">
+
+        <div className="services-grid" role="list">
           {services.map((svc, i) => (
-            <div className="reveal" style={{ transitionDelay: `${i * 0.1}s`, perspective: '1000px' }} key={i}>
-               <InteractiveCard icon={svc.icon} title={svc.title} desc={svc.desc} waMessage={svc.waMessage} />
+            <div className="reveal" role="listitem" style={{ transitionDelay: `${i * 0.1}s`, perspective: '1000px' }} key={i}>
+              <InteractiveCard icon={svc.icon} title={svc.title} desc={svc.desc} waMessage={svc.waMessage} ariaLabel={svc.ariaLabel} />
             </div>
           ))}
         </div>

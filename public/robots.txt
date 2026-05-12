@@ -1,0 +1,24 @@
+# Forge Digital – robots.txt
+# https://theforgedigital.in
+
+User-agent: *
+Allow: /
+
+# Block Vite build assets (hashed JS/CSS bundles — not crawlable content)
+Disallow: /assets/
+
+# Block raw public assets that should not be indexed as standalone pages
+Disallow: /mockup1.png
+Disallow: /mockup2.png
+Disallow: /mockup3.png
+Disallow: /portfolio.png
+Disallow: /linkedin.png
+Disallow: /ats_resume.png
+Disallow: /unop_resume_1.svg
+Disallow: /unop_resume_2.svg
+Disallow: /favicon.svg
+Disallow: /icons.svg
+Disallow: /site.webmanifest
+
+# Sitemap location
+Sitemap: https://theforgedigital.in/sitemap.xml

@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function WhyAts() {
   return (
-    <section id="why-ats" className="resume-stack-section">
+    <section id="why-ats" className="resume-stack-section" aria-labelledby="why-ats-heading">
       <div className="container split-layout">
         <div className="text-content reveal">
-          <h2 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Why ATS Friendly?</h2>
+          <h2 id="why-ats-heading" style={{ fontSize: '3.5rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Why ATS Friendly?</h2>
           <p style={{ fontSize: '1.25rem', lineHeight: 1.8 }}>
             An Applicant Tracking System (ATS) scans CVs for keywords and formatting. 
             If your layout is complex, the system can't read it, and you get automatically rejected.
@@ -24,26 +24,38 @@ export default function WhyAts() {
         <div className="reveal">
           <div className="resume-stack-container">
             <div className="resume-card resume-card-plain" style={{ padding: '0', overflow: 'hidden', border: '1px solid #ccc' }}>
-               <img 
-                 src="/mockup1.png" 
-                 alt="Pristine Minimalist ATS Resume" 
-                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', backgroundColor: '#fdfbf7' }} 
+               <img
+                 src="/mockup1.png"
+                 alt="Pristine minimalist ATS-friendly resume example by Forge Digital"
+                 width="600"
+                 height="848"
+                 loading="lazy"
+                 decoding="async"
+                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', backgroundColor: '#fdfbf7' }}
                />
             </div>
 
             <div className="resume-card resume-card-blue" style={{ display: 'flex', padding: 0, border: '1px solid #bbb', overflow: 'hidden' }}>
-               <img 
-                 src="/mockup2.png" 
-                 alt="High-End Modern ATS Resume" 
-                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', backgroundColor: '#ffffff' }} 
+               <img
+                 src="/mockup2.png"
+                 alt="High-end modern ATS-compliant resume sample by Forge Digital"
+                 width="600"
+                 height="848"
+                 loading="lazy"
+                 decoding="async"
+                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', backgroundColor: '#ffffff' }}
                />
             </div>
 
             <div className="resume-card resume-card-ats" style={{ padding: 0, overflow: 'hidden', border: '1px solid #ccc' }}>
-              <img 
-                src="/mockup3.png" 
-                alt="Executive Level ATS Friendly Resume" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+              <img
+                src="/mockup3.png"
+                alt="Executive-level ATS-friendly resume design by Forge Digital"
+                width="600"
+                height="848"
+                loading="lazy"
+                decoding="async"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
           </div>

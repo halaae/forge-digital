@@ -10,13 +10,13 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container" style={{ position: 'relative' }}>
-        <div className="logo-container">
+        <a href="/" className="logo-container" aria-label="Forge Digital – Home">
           <div className="logo-main">Forge</div>
           <div className="logo-sub">DIGITAL</div>
-        </div>
+        </a>
         
         {/* Desktop Nav */}
-        <nav className="nav-links desktop-nav">
+        <nav className="nav-links desktop-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#why-ats">Why ATS?</a>
           <a href="#choose-us">Why Us?</a>
@@ -24,13 +24,13 @@ export default function Header() {
         </nav>
 
         {/* Mobile Toggle Button */}
-        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Navigation">
+        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Navigation" aria-expanded={isMenuOpen} aria-controls="mobile-nav">
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
         {/* Mobile Nav Overlay */}
-        <div className={`mobile-nav-overlay ${isMenuOpen ? 'open' : ''}`}>
-          <nav className="mobile-nav-links">
+        <div id="mobile-nav" className={`mobile-nav-overlay ${isMenuOpen ? 'open' : ''}`} aria-hidden={!isMenuOpen}>
+          <nav className="mobile-nav-links" aria-label="Mobile navigation">
             <a href="#services" onClick={closeMenu}>Services</a>
             <a href="#why-ats" onClick={closeMenu}>Why ATS?</a>
             <a href="#choose-us" onClick={closeMenu}>Why Us?</a>

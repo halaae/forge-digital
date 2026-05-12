@@ -26,8 +26,8 @@ const Marquee = () => {
   ];
 
   return (
-    <div className="marquee-container">
-      <div className="marquee-content">
+    <div className="marquee-container" role="marquee" aria-label="Services highlight ticker">
+      <div className="marquee-content" aria-hidden="true">
         {testimonials.map((item, i) => (
           <span key={i} className="marquee-item">{item}</span>
         ))}
@@ -43,7 +43,7 @@ function App() {
     <div className="app-container">
       <AmbientBackground />
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Marquee />
         <Services />
@@ -51,10 +51,18 @@ function App() {
         <WhyPortfolio />
         <ChooseUs />
       </main>
-      <Contact />
-      
-      <a href="https://wa.me/918848524175" target="_blank" rel="noopener noreferrer" className="sticky-whatsapp">
-        <MessageCircle size={32} strokeWidth={1.5} />
+      <footer>
+        <Contact />
+      </footer>
+
+      <a
+        href="https://wa.me/918848524175"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="sticky-whatsapp"
+        aria-label="Chat with Forge Digital on WhatsApp"
+      >
+        <MessageCircle size={32} strokeWidth={1.5} aria-hidden="true" />
       </a>
     </div>
   );

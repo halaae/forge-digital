@@ -21,17 +21,17 @@ export default function ChooseUs() {
   ];
 
   return (
-    <section id="choose-us" className="bg-light">
+    <section id="choose-us" className="bg-light" aria-labelledby="choose-us-heading">
       <div className="container">
         <div className="text-center reveal">
-          <h2 style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '0.5rem' }}>Why Choose Forge Digital?</h2>
+          <h2 id="choose-us-heading" style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '0.5rem' }}>Why Choose Forge Digital?</h2>
           <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>We don't just build resumes; we build careers.</p>
         </div>
         
-        <div className="features-container">
+        <div className="features-container" role="list">
           {features.map((feature, i) => (
-            <div className="feature-row reveal" style={{ transitionDelay: `${i * 0.15}s` }} key={i}>
-              <div className="feature-icon">{feature.icon}</div>
+            <div className="feature-row reveal" role="listitem" style={{ transitionDelay: `${i * 0.15}s` }} key={i}>
+              <div className="feature-icon" aria-hidden="true">{feature.icon}</div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem' }}>{feature.title}</h3>
                 <p style={{ color: 'var(--text-secondary)' }}>{feature.desc}</p>
