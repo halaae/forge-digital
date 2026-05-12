@@ -84,6 +84,34 @@ export default function BlogPost() {
     'inLanguage': 'en-IN',
   };
 
+  // FAQ Schema
+  const faqSchema = post.faq ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': post.faq.map(item => ({
+      '@type': 'Question',
+      'name': item.q,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': item.a
+      }
+    }))
+  } : null;
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://theforgedigital.in/' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': 'https://theforgedigital.in/blog' },
+      { '@type': 'ListItem', 'position': 3, 'name': post.title, 'item': `https://theforgedigital.in${canonicalUrl}` }
+    ]
+  };
+
+  const schemas = [articleSchema, breadcrumbSchema];
+  if (faqSchema) schemas.push(faqSchema);
+
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
   const waLink = `https://wa.me/918848524175?text=${encodeURIComponent(post.cta.waMessage)}`;
 
@@ -96,7 +124,7 @@ export default function BlogPost() {
         ogType="article"
         ogImage={`https://theforgedigital.in${post.image}`}
         keywords={post.tags.join(', ')}
-        schema={articleSchema}
+        schema={schemas}
       />
       <BlogNav />
 
@@ -148,6 +176,21 @@ export default function BlogPost() {
               <span key={tag} className="blog-tag">{tag}</span>
             ))}
           </div>
+
+          {/* Visible FAQ Section */}
+          {post.faq && (
+            <section className="blog-article-faq" aria-labelledby="article-faq-title">
+              <h2 id="article-faq-title">Frequently Asked Questions</h2>
+              <div className="blog-faq-list">
+                {post.faq.map((item, index) => (
+                  <div key={index} className="blog-faq-item">
+                    <h3>{item.q}</h3>
+                    <p>{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* CTA */}
           <div className="blog-article-cta" role="complementary" aria-label="Call to action">

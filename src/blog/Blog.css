@@ -454,6 +454,58 @@
   margin-bottom: 2rem;
 }
 
+/* ─── ARTICLE FAQ SECTION ─── */
+.blog-article-faq {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.blog-article-faq h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.blog-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.blog-faq-item {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.blog-faq-item:hover {
+  border-color: var(--brand);
+  box-shadow: 0 8px 25px rgba(46, 139, 87, 0.08);
+  transform: translateY(-2px);
+}
+
+.blog-faq-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+}
+
+.blog-faq-item p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .blog-grid {
@@ -493,6 +545,13 @@
     padding: 0 1rem;
   }
   .blog-logo-main {
+    font-size: 1.5rem;
+  }
+  .blog-article-faq {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+  .blog-article-faq h2 {
     font-size: 1.5rem;
   }
 }

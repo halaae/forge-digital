@@ -60,6 +60,27 @@ function districtPage(district, districtAlt, slug, coords) {
   };
 }
 
+// ── Helper to generate a role-based landing page ──
+function rolePage(role, slug, metaTitle, metaDesc, keywords, heroTitle, heroSubtitle, sections, faq) {
+  return {
+    slug,
+    district: 'India',
+    districtAlt: 'India',
+    geo: { lat: 20.5937, lng: 78.9629 },
+    metaTitle,
+    metaDescription: metaDesc,
+    keywords,
+    heroTitle,
+    heroSubtitle,
+    sections,
+    faq,
+    cta: {
+      text: `Get Your ${role} Resume`,
+      waMessage: `Hi, I'm looking for a professional ${role} resume. Can you help me?`,
+    },
+  };
+}
+
 // ── Kerala districts with coordinates ──
 export const pages = [
   // === Kerala state-level ===
@@ -130,31 +151,130 @@ export const pages = [
     cta: { text: 'Get Your ATS Resume Today', waMessage: 'Hi, I need a professional ATS resume. Can you help me?' },
   },
 
-  // === LinkedIn Optimization Kerala ===
+  // === LinkedIn Optimization India ===
   {
-    slug: 'linkedin-optimization-kerala',
-    district: 'Kerala',
-    districtAlt: 'Kerala',
-    geo: { lat: 10.8505, lng: 76.2711 },
-    metaTitle: 'LinkedIn Profile Optimization Service Kerala | Forge Digital',
-    metaDescription: 'Boost your recruiter visibility with Forge Digital\'s LinkedIn optimization service in Kerala. 87% of recruiters use LinkedIn — make sure they find you. Starting ₹299.',
-    keywords: 'LinkedIn optimization Kerala, LinkedIn profile writing Kerala, LinkedIn profile optimization India, LinkedIn headline optimization, recruiter visibility LinkedIn, Forge Digital Kerala',
-    heroTitle: 'LinkedIn Profile Optimization Service in Kerala',
-    heroSubtitle: '87% of recruiters use LinkedIn to find candidates. If your profile isn\'t optimised, you\'re invisible. Forge Digital transforms your LinkedIn presence to attract top opportunities.',
+    slug: 'linkedin-optimization-india',
+    district: 'India',
+    districtAlt: 'India',
+    geo: { lat: 20.5937, lng: 78.9629 },
+    metaTitle: 'Best LinkedIn Profile Optimization Service India | Forge Digital',
+    metaDescription: 'Boost your visibility to recruiters with India\'s top LinkedIn optimization service. Headline, summary, and keyword optimization to help you land more interviews. Starting ₹299.',
+    keywords: 'LinkedIn optimization India, LinkedIn profile writing service India, LinkedIn headline optimization, professional LinkedIn writer India, recruiter visibility LinkedIn, LinkedIn branding India',
+    heroTitle: 'India\'s Premium LinkedIn Optimization Service',
+    heroSubtitle: '87% of recruiters use LinkedIn to find candidates. If your profile isn\'t appearing in searches, you\'re losing opportunities. Forge Digital transforms your LinkedIn presence into a recruiter magnet.',
     sections: [
-      { heading: 'Why LinkedIn Optimization Matters', body: 'LinkedIn is the world\'s largest professional network — and recruiters treat it as their primary sourcing tool. An optimised profile means:\n\n- Appearing in more recruiter searches\n- Getting discovered for roles you didn\'t even apply to\n- Building credibility before the first interview\n\nForge Digital optimises every element of your LinkedIn profile — headline, summary, experience, skills, endorsements, and keyword density — to maximise your visibility in recruiter searches.' },
-      { heading: 'What We Optimise', body: '**Headline** — Your headline is the #1 search factor. We craft keyword-rich headlines that rank for your target roles.\n\n**About Summary** — A compelling, keyword-dense narrative that tells your professional story.\n\n**Experience Section** — Mirror your ATS resume with achievement-driven bullets.\n\n**Skills & Endorsements** — Strategic skill selection based on industry demand.\n\n**URL & Profile Photo** — Custom URL and professional appearance guidance.' },
-      { heading: 'Who Needs LinkedIn Optimization', body: 'Every professional in Kerala — from fresh graduates to senior executives — benefits from LinkedIn optimization:\n\n- **Freshers** looking for their first job\n- **IT professionals** in Kochi, Trivandrum, and Calicut\n- **Career changers** pivoting to new industries\n- **Executives** seeking board positions or consulting opportunities\n- **Freelancers** building their personal brand' },
-      { heading: 'How It Works', body: '**Step 1:** Share your current LinkedIn profile URL and resume.\n**Step 2:** Our team audits your profile against recruiter search algorithms.\n**Step 3:** We rewrite and optimise every section.\n**Step 4:** You receive a detailed before/after breakdown.\n\nDelivered within 24–48 hours.' },
-      { heading: 'Pricing', body: 'LinkedIn optimization services start at **₹299**. Bundle with an ATS resume for maximum career impact.\n\nContact us on WhatsApp for a custom quote.' },
+      { heading: 'Why LinkedIn Optimization is Essential in India', body: 'The Indian job market is massive, and top companies (Google, Amazon, TCS, Infosys, Reliance) use LinkedIn as their primary sourcing tool. A generic profile is invisible.\n\nForge Digital uses a data-driven approach to optimize your profile for the LinkedIn search algorithm. We ensure you rank for the right keywords and that your profile communicates your unique value proposition at first glance.' },
+      { heading: 'What Our LinkedIn Optimization Includes', body: '**Keyword-Rich Headline** — The #1 factor in search rankings.\n**Compelling About Summary** — A professional narrative that tells your story.\n**Experience Optimization** — Mirroring your ATS resume for consistency.\n**Skills Alignment** — Strategic skill selection to match industry demand.\n**Recruiter Visibility Settings** — Guidance on reaching the right eyes.' },
+      { heading: 'How It Works', body: '1. Share your current profile and career goals via WhatsApp.\n2. We audit your presence against industry standards.\n3. We provide optimized text for every section of your profile.\n4. You receive implementation guidance to go live.' },
     ],
     faq: [
-      { q: 'Does LinkedIn optimization really help get jobs?', a: '87% of recruiters use LinkedIn to source candidates. An optimised profile with the right keywords appears in significantly more recruiter searches, leading to inbound job opportunities you never applied to.' },
-      { q: 'How is LinkedIn optimization delivered?', a: 'We provide optimised text for every section of your profile — headline, summary, experience, and skills — plus step-by-step implementation guidance. Delivered via WhatsApp and email.' },
-      { q: 'Can freshers benefit from LinkedIn optimization?', a: 'Absolutely. Recruiters search for fresh graduates on LinkedIn too. We optimise your student profile to highlight projects, internships, and the right skills for your target entry-level roles.' },
+      { q: 'How much does LinkedIn optimization cost in India?', a: 'Our services start at ₹299. We offer bundles that include an ATS resume for maximum impact.' },
+      { q: 'Will this help me get more job offers?', a: 'Optimized profiles typically see a 3x-5x increase in "Recruiter Appearances" in the first week. While we can\'t guarantee offers, we guarantee you\'ll be seen by more hiring managers.' },
     ],
-    cta: { text: 'Optimise My LinkedIn Profile', waMessage: 'Hi, I need LinkedIn profile optimization. Can you help me?' },
+    cta: { text: 'Optimize My LinkedIn Now', waMessage: 'Hi, I want to optimize my LinkedIn profile for the Indian job market.' },
   },
+
+  // === 20 NEW PAGES START HERE ===
+
+  // 1. Resume Service Bangalore
+  rolePage('Bangalore', 'resume-service-bangalore', 'Best Resume Writing Service Bangalore | ATS Resume Forge Digital', 'Professional ATS resume writing service in Bangalore (Bengaluru). Tech resumes, product management, and executive CVs. Starting ₹299.', 'resume writing bangalore, resume service Bengaluru, tech resume writer bangalore, ATS resume bangalore', 'Bangalore\'s Leading ATS Resume Writing Service', 'Helping Bangalore\'s tech and corporate professionals land roles at top unicorns and MNCs with keyword-optimized, high-impact resumes.', 
+    [{ heading: 'Serving the Silicon Valley of India', body: 'From Whitefield to Electronic City, Forge Digital provides Bangalore professionals with the competitive edge they need. We specialize in software engineering, data science, and product resumes that pass the strict filters of top tech firms.' }],
+    [{ q: 'Do you provide tech resumes in Bangalore?', a: 'Yes, we are specialists in technical and engineering resumes for the Bangalore job market.' }]),
+
+  // 2. Resume Service Kochi
+  rolePage('Kochi', 'resume-service-kochi', 'Resume Writing Service Kochi | ATS Resume Kochi Kerala', 'Top-rated resume writing service in Kochi (Ernakulam). ATS-optimized CVs for Infopark, SmartCity, and maritime professionals. Starting ₹299.', 'resume service kochi, resume writing Ernakulam, CV writer Kochi, Kochi resume help', 'Kochi\'s #1 Resume Writing Service', 'Professional career branding for Kochi\'s IT hubs and maritime sectors. Delivered digitally, starting at ₹299.', 
+    [{ heading: 'Kochi\'s Career Growth Partner', body: 'Serving Infopark, SmartCity, and the diverse industries of Ernakulam. We help Kochi professionals transition into high-paying roles with resumes that stand out.' }],
+    [{ q: 'Is there a physical office in Kochi?', a: 'We operate 100% digitally to keep costs low for you, providing premium quality via WhatsApp and Email across Kochi.' }]),
+
+  // 3. Software Engineer Resume India
+  rolePage('Software Engineer', 'software-engineer-resume-india', 'Software Engineer Resume Writing Service India | ATS Tech Resume', 'Get a professional software engineer resume that passes tech ATS filters. Specialized for SDE 1, 2, 3 and Senior Engineer roles. Starting ₹299.', 'software engineer resume india, tech resume writer india, SDE resume service, developer resume india', 'The Ultimate Software Engineer Resume Service', 'Built by experts who understand tech stacks, microservices, and system design. We make your technical impact clear to both machines and humans.', 
+    [{ heading: 'Resumes for the Modern Developer', body: 'We don\'t just list languages. We highlight your contributions to distributed systems, cloud migrations, and scalable architectures using industry-standard technical keywords.' }],
+    [{ q: 'Do you cover all tech stacks?', a: 'Yes, from MERN and Java/Spring to AI/ML and DevOps roles.' }]),
+
+  // 4. Resume Writing for Gulf Jobs
+  rolePage('Gulf Jobs', 'resume-writing-for-gulf-jobs', 'Gulf Job Resume Writing Service | UAE, Qatar, Saudi Arabia CV', 'Professional CV writing for Gulf jobs. Specialized for UAE, Qatar, Oman, and Saudi Arabia job markets. ATS-optimized and GCC-compliant. Starting ₹299.', 'gulf job resume, UAE CV writing, Saudi Arabia job resume, Qatar CV service, GCC resume help', 'Land Your Dream Job in the Gulf', 'Forge Digital creates GCC-compliant resumes that highlight your international experience and technical expertise for top employers in Dubai, Doha, and Riyadh.', 
+    [{ heading: 'Optimized for the GCC Market', body: 'The Gulf market has specific requirements for CV structure and information. We ensure your resume meets these standards while remaining 100% ATS-friendly for international firms.' }],
+    [{ q: 'Can you help with Dubai job applications?', a: 'Yes, we specialize in UAE-style professional CVs.' }]),
+
+  // 5. Data Analyst Resume India
+  rolePage('Data Analyst', 'data-analyst-resume-india', 'Data Analyst Resume Writing Service India | ATS Data Science CV', 'Professional resume writing for Data Analysts, Data Scientists, and BI professionals. Highlight your SQL, Python, and Tableau impact. Starting ₹299.', 'data analyst resume india, data science resume service, BI analyst resume writer', 'Data-Driven Resumes for Data Professionals', 'Your resume should be as analytical as your work. We quantify your impact on business metrics using the right data-driven keywords.', 
+    [{ heading: 'Visualizing Your Career Data', body: 'We help you articulate how you turned raw data into business insights, focusing on the specific tools and methodologies that recruiters look for in the Indian market.' }],
+    [{ q: 'Do you help with Data Scientist resumes too?', a: 'Yes, we cover the full spectrum of data and analytics roles.' }]),
+
+  // 6. Resume Service Mumbai
+  rolePage('Mumbai', 'resume-service-mumbai', 'Best Resume Writing Service Mumbai | Finance & Corporate CVs', 'Mumbai\'s leading ATS resume service. Specialized for finance, banking, media, and executive roles. Starting ₹299.', 'resume writing mumbai, resume service Mumbai, banking resume mumbai', 'Mumbai\'s Premium Career Branding Service', 'From BKC to South Mumbai, we help the city\'s top professionals dominate the corporate job market with world-class resumes.', 
+    [{ heading: 'The Financial Capital\'s Resume Experts', body: 'We understand the high-pressure demands of Mumbai\'s corporate world. Our resumes are designed to get you noticed by the top firms in India.' }],
+    [{ q: 'Do you write resumes for investment banking?', a: 'Yes, we specialize in high-impact finance and banking resumes.' }]),
+
+  // 7. Resume Service Chennai
+  rolePage('Chennai', 'resume-service-chennai', 'Resume Writing Service Chennai | IT & Manufacturing CVs', 'Chennai\'s top-rated ATS resume writing service. Specialized for IT, automotive, and manufacturing sectors. Starting ₹299.', 'resume writing chennai, resume service Chennai, IT resume chennai', 'Chennai\'s Trusted Resume Partner', 'Helping Chennai\'s talent from OMR to Ambattur secure top roles with keyword-rich, professionally formatted resumes.', 
+    [{ heading: 'Serving the Gateway to South India', body: 'Whether you\'re in the IT corridor or the manufacturing hub, we provide localized expertise for Chennai\'s competitive job market.' }],
+    [{ q: 'Do you help with fresher resumes in Chennai?', a: 'Yes, we have a dedicated service for students and fresh graduates in Chennai.' }]),
+
+  // 8. Resume Service Hyderabad
+  rolePage('Hyderabad', 'resume-service-hyderabad', 'Resume Writing Service Hyderabad | Tech & Pharma CVs', 'Hyderabad\'s leading ATS resume service. Specialized for tech, pharma, and global capability centers (GCCs). Starting ₹299.', 'resume writing hyderabad, resume service Hyderabad, tech resume hyderabad', 'Hyderabad\'s Career Growth Hub', 'Empowering Hyderabad\'s professionals from HITEC City to Gachibowli with resumes that pass every global ATS filter.', 
+    [{ heading: 'HITEC City\'s Resume Specialists', body: 'We help Hyderabad\'s tech and healthcare talent stand out in a sea of applications with precise keyword targeting and premium design.' }],
+    [{ q: 'Do you cover pharma industry resumes?', a: 'Yes, we provide specialized resumes for the pharmaceutical and life sciences sectors.' }]),
+
+  // 9. Resume Service Delhi
+  rolePage('Delhi', 'resume-service-delhi', 'Resume Writing Service Delhi NCR | Corporate & Govt CVs', 'Top-rated resume writing service in Delhi, Gurgaon, and Noida. Optimized for corporate, consulting, and PSU roles. Starting ₹299.', 'resume writing delhi, resume service Gurgaon, Noida resume writer', 'Delhi NCR\'s Premier Resume Service', 'Navigating the competitive NCR job market requires a superior resume. We deliver ATS-optimized CVs to professionals across the capital region.', 
+    [{ heading: 'Delhi NCR\'s Competitive Edge', body: 'From startups in Gurgaon to giants in Noida, we provide the career branding you need to stay ahead.' }],
+    [{ q: 'Do you write resumes for senior consultants?', a: 'Yes, we specialize in executive and senior management resumes for the Delhi market.' }]),
+
+  // 10. Nurse Resume Writing Service
+  rolePage('Nurse', 'nurse-resume-writing-service', 'Nursing Resume Writing Service India | Healthcare CV Kerala', 'Specialized resume writing for nurses and healthcare professionals. Optimized for Indian and international hospitals (UK, UAE, Ireland). Starting ₹299.', 'nurse resume india, nursing CV writing kerala, healthcare resume service', 'Empowering Healthcare Heroes', 'We help nurses in Kerala and India secure positions at top domestic and international hospitals with professionally crafted medical resumes.', 
+    [{ heading: 'Resumes for Caregivers', body: 'We highlight your clinical skills, certifications, and specialized experience in a format that healthcare recruiters trust.' }],
+    [{ q: 'Do you help with resumes for UK nursing jobs?', a: 'Yes, we specialize in international nursing CV formats for the UK, Ireland, and Middle East.' }]),
+
+  // 11. Project Manager Resume India
+  rolePage('Project Manager', 'project-manager-resume-india', 'Project Manager Resume Writing Service India | PMP & Agile CV', 'Professional resume writing for Project Managers and Program Managers. Highlight your PMP, Agile, and Scrum impact. Starting ₹299.', 'project manager resume india, PM resume service, agile project manager CV', 'Strategic Resumes for Project Leaders', 'Your resume should be a project in excellence. We highlight your leadership, budget management, and delivery success using industry-standard PM keywords.', 
+    [{ heading: 'Managing Your Career Success', body: 'We help PMs articulate complex project deliveries into high-impact bullet points that hiring managers value.' }],
+    [{ q: 'Do you cover IT and non-IT project management?', a: 'Yes, we have expertise in construction, manufacturing, and IT project management resumes.' }]),
+
+  // 12. Mechanical Engineer Resume India
+  rolePage('Mechanical Engineer', 'mechanical-engineer-resume-india', 'Mechanical Engineer Resume Writing Service India | ATS CV', 'Professional resume writing for mechanical engineers. Optimized for automotive, manufacturing, and core sectors. Starting ₹299.', 'mechanical engineer resume india, core engineering resume service, design engineer CV', 'Core Engineering Career Branding', 'We help mechanical engineers highlight their design, manufacturing, and maintenance expertise for top industrial firms across India.', 
+    [{ heading: 'Engineering Your Career Move', body: 'From CAD/CAM skills to shop floor management, we ensure your technical prowess is parsed correctly by engineering ATS systems.' }],
+    [{ q: 'Do you help with resumes for Gulf engineering jobs?', a: 'Yes, we specialize in engineering CVs for both Indian and Middle Eastern markets.' }]),
+
+  // 13. Electrical Engineer Resume India
+  rolePage('Electrical Engineer', 'electrical-engineer-resume-india', 'Electrical Engineer Resume Writing Service India | ATS CV', 'Professional resume writing for electrical and electronics engineers. Optimized for power, semiconductor, and automation roles. Starting ₹299.', 'electrical engineer resume india, EEE resume service, power systems CV writer', 'Powered by Professionalism', 'High-impact resumes for electrical engineers that showcase technical mastery and project success in the energy and tech sectors.', 
+    [{ heading: 'Conducting Your Career Growth', body: 'We translate your technical certifications and project experience into a narrative that resonates with engineering hiring managers.' }],
+    [{ q: 'Do you help freshers in electrical engineering?', a: 'Yes, we build strong fresher resumes for EEE and ECE graduates.' }]),
+
+  // 14. Digital Marketing Resume India
+  rolePage('Digital Marketing', 'digital-marketing-resume-india', 'Digital Marketing Resume Writing Service India | SEO & Ads CV', 'Professional resume writing for Digital Marketers, SEO experts, and Ad specialists. Highlight your ROI and campaign success. Starting ₹299.', 'digital marketing resume india, SEO resume service, marketing manager CV', 'ROI-Focused Resumes for Marketers', 'As a marketer, your resume is your most important campaign. We optimize it for "conversions" — getting you more interviews.', 
+    [{ heading: 'Marketing the Marketer', body: 'We highlight your impact on traffic, leads, and revenue using the same data-driven language you use in your daily work.' }],
+    [{ q: 'Do you help with social media manager resumes?', a: 'Yes, we cover the full range of digital marketing and content roles.' }]),
+
+  // 15. Sales Resume Writing Service
+  rolePage('Sales', 'sales-resume-writing-service', 'Sales & BD Resume Writing Service India | Revenue-Focused CV', 'Professional resume writing for Sales Managers and Business Development professionals. Highlight your quota-crushing success. Starting ₹299.', 'sales resume india, business development resume, revenue manager CV', 'Closing the Deal on Your Next Career Move', 'We help sales professionals turn their targets and achievements into a compelling narrative that proves they are top performers.', 
+    [{ heading: 'The Art of the Pitch', body: 'We focus on your numbers: revenue growth, market share increase, and client acquisition success.' }],
+    [{ q: 'Do you write resumes for FMCG sales?', a: 'Yes, we cover FMCG, Tech/SaaS, and Real Estate sales roles.' }]),
+
+  // 16. Banking Resume Writing Service
+  rolePage('Banking', 'banking-resume-writing-service', 'Banking & Finance Resume Writing Service India | ATS CV', 'Professional resume writing for Bankers, Relationship Managers, and Investment Analysts. Optimized for HDFC, ICICI, SBI, and MNC banks. Starting ₹299.', 'banking resume india, finance resume service, relationship manager CV', 'Trusted Career Branding for Finance Professionals', 'We help India\'s banking talent secure roles at top financial institutions with precise, keyword-optimized resumes.', 
+    [{ heading: 'Invested in Your Success', body: 'We understand the regulatory and technical keywords of the Indian banking sector, ensuring your resume passes every internal HR filter.' }],
+    [{ q: 'Do you write resumes for entry-level bank roles?', a: 'Yes, we help freshers land roles in retail and corporate banking.' }]),
+
+  // 17. Fresher Resume India
+  rolePage('Fresher', 'fresher-resume-india', 'Best Fresher Resume Writing Service India | First Job CV', 'Professional resume writing for fresh graduates and students across India. Land your first job at top MNCs and startups. Starting ₹299.', 'fresher resume india, first job CV writing, student resume service', 'Your First Step to Career Success', 'Forge Digital specializes in building powerful entry-level resumes that highlight your potential, internships, and academic achievements.', 
+    [{ heading: 'Launching Indian Careers', body: 'Competing with millions of graduates? You need a resume that stands out. We build purpose-built fresher resumes that recruiters love.' }],
+    [{ q: 'Can I get a resume without work experience?', a: 'Yes! We focus on your projects, internships, and academic excellence to build a strong profile.' }]),
+
+  // 18. Student Internship Resume Service
+  rolePage('Internship', 'student-internship-resume-service', 'Student Internship Resume Writing Service India | Student CV', 'Get a professional resume for internship applications. Optimized for top companies and research roles. Starting ₹299.', 'internship resume india, student CV writing service, research internship resume', 'Secure the Best Internships', 'Your internship is the foundation of your career. We help you land it with a professional resume that highlights your academic and project work.', 
+    [{ heading: 'Building Your Academic Brand', body: 'We help students from across India present their skills and coursework in a format that attracts top-tier internship providers.' }],
+    [{ q: 'Do you help with IIT/NIT internship resumes?', a: 'Yes, we specialize in high-caliber student resumes for top institutions.' }]),
+
+  // 19. CV Writing Service UAE
+  rolePage('UAE', 'cv-writing-service-uae', 'Professional CV Writing Service UAE | Dubai & Abu Dhabi Jobs', 'Specialized CV writing for UAE and Dubai job markets. GCC-compliant, ATS-optimized, and recruiter-ready. Starting ₹299.', 'UAE CV writing service, Dubai resume writer, Abu Dhabi job CV', 'Your Gateway to Dubai\'s Job Market', 'We help professionals in India and the UAE secure roles in the Middle East with high-impact, GCC-compliant professional CVs.', 
+    [{ heading: 'Dominating the Dubai Job Market', body: 'UAE recruiters have specific expectations. We ensure your CV meets them while remaining 100% ATS-friendly for international firms in the region.' }],
+    [{ q: 'Are you based in the UAE?', a: 'We serve the UAE market digitally from India, providing the same premium quality at a much more affordable price point.' }]),
+
+  // 20. Executive Resume Writing India
+  rolePage('Executive', 'executive-resume-writing-india', 'Executive Resume Writing Service India | VP, Director & CEO CV', 'Premium executive resume writing for VPs, Directors, and C-level leaders in India. Specialized for high-stakes leadership roles. Starting ₹299.', 'executive resume india, CEO resume writer, leadership branding india', 'Elite Branding for Executive Leaders', 'Leadership requires a different narrative. We build high-impact executive profiles that communicate vision, strategy, and business impact.', 
+    [{ heading: 'The Boardroom Perspective', body: 'We move beyond tactical tasks to highlight your strategic influence, revenue responsibility, and organizational leadership.' }],
+    [{ q: 'Is this service confidential?', a: 'Absolutely. We maintain 100% confidentiality for all our executive clients.' }]),
 
   // === Kerala district pages ===
   districtPage('Kozhikode', 'Calicut', 'ats-resume-kozhikode', { lat: 11.2588, lng: 75.7804 }),

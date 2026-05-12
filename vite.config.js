@@ -12,17 +12,19 @@ const require = createRequire(import.meta.url)
 const blogSlugs = [
   'best-ats-resume-format-2026',
   'why-ats-rejects-resumes',
-  'resume-mistakes-freshers-make',
-  'resume-for-software-engineers',
+  'resume-tips-for-freshers',
+  'linkedin-optimization-india-strategy',
 ]
 
 const blogRoutes = ['/blog', ...blogSlugs.map((s) => `/blog/${s}`)]
 
-// Landing page slugs (mirrors src/landing/pages.js)
+// All landing slugs (Kerala Districts + Major Cities + Role-specific)
 const landingSlugs = [
   'resume-service-kerala',
   'resume-writing-india',
+  'linkedin-optimization-india',
   'linkedin-optimization-kerala',
+  // Districts
   'ats-resume-kozhikode',
   'ats-resume-calicut',
   'ats-resume-thiruvananthapuram',
@@ -39,6 +41,27 @@ const landingSlugs = [
   'ats-resume-kasaragod',
   'ats-resume-idukki',
   'ats-resume-pathanamthitta',
+  // 20 New Regional/Role pages
+  'resume-service-bangalore',
+  'resume-service-kochi',
+  'software-engineer-resume-india',
+  'resume-writing-for-gulf-jobs',
+  'data-analyst-resume-india',
+  'resume-service-mumbai',
+  'resume-service-chennai',
+  'resume-service-hyderabad',
+  'resume-service-delhi',
+  'nurse-resume-writing-service',
+  'project-manager-resume-india',
+  'mechanical-engineer-resume-india',
+  'electrical-engineer-resume-india',
+  'digital-marketing-resume-india',
+  'sales-resume-writing-service',
+  'banking-resume-writing-service',
+  'fresher-resume-india',
+  'student-internship-resume-service',
+  'cv-writing-service-uae',
+  'executive-resume-writing-india',
 ]
 
 const landingRoutes = landingSlugs.map((s) => `/${s}`)
