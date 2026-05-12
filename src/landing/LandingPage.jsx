@@ -1,115 +1,8 @@
-// src/landing/LandingPage.jsx
-import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React from 'react';
+import { useParams, Navigate } from 'react-router-dom';
 import { getLandingBySlug } from './pages';
+import SEO from '../components/SEO';
 import './Landing.css';
-
-function useLandingMeta(page) {
-  useEffect(() => {
-    if (!page) return;
-
-    const prev = {
-      title: document.title,
-      desc: document.querySelector('meta[name="description"]')?.getAttribute('content'),
-    };
-
-    document.title = page.metaTitle;
-
-    const setMeta = (name, content, prop = false) => {
-      const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-      let el = document.querySelector(sel);
-      if (!el) {
-        el = document.createElement('meta');
-        prop ? el.setAttribute('property', name) : el.setAttribute('name', name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
-
-    setMeta('description', page.metaDescription);
-    setMeta('keywords', page.keywords);
-    setMeta('og:title', page.metaTitle, true);
-    setMeta('og:description', page.metaDescription, true);
-    setMeta('og:url', `https://theforgedigital.in/${page.slug}`, true);
-    setMeta('twitter:title', page.metaTitle);
-    setMeta('twitter:description', page.metaDescription);
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', `https://theforgedigital.in/${page.slug}`);
-
-    // LocalBusiness / Service Schema
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": `Forge Digital ${page.district}`,
-      "image": "https://theforgedigital.in/ats_resume.png",
-      "@id": `https://theforgedigital.in/${page.slug}`,
-      "url": `https://theforgedigital.in/${page.slug}`,
-      "telephone": "+918848524175",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": page.district,
-        "addressRegion": "Kerala",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": page.geo.lat,
-        "longitude": page.geo.lng
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      }
-    };
-
-    // FAQ Schema
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": page.faq.map(item => ({
-        "@type": "Question",
-        "name": item.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.a
-        }
-      }))
-    };
-
-    let scriptService = document.getElementById('landing-service-ld');
-    if (!scriptService) {
-      scriptService = document.createElement('script');
-      scriptService.id = 'landing-service-ld';
-      scriptService.type = 'application/ld+json';
-      document.head.appendChild(scriptService);
-    }
-    scriptService.textContent = JSON.stringify(serviceSchema);
-
-    let scriptFaq = document.getElementById('landing-faq-ld');
-    if (!scriptFaq) {
-      scriptFaq = document.createElement('script');
-      scriptFaq.id = 'landing-faq-ld';
-      scriptFaq.type = 'application/ld+json';
-      document.head.appendChild(scriptFaq);
-    }
-    scriptFaq.textContent = JSON.stringify(faqSchema);
-
-    return () => {
-      document.title = prev.title;
-      if (prev.desc) setMeta('description', prev.desc);
-      document.getElementById('landing-service-ld')?.remove();
-      document.getElementById('landing-faq-ld')?.remove();
-    };
-  }, [page]);
-}
 
 const renderContent = (text) => {
   return text.split('\n\n').map((para, i) => (
@@ -121,16 +14,63 @@ export default function LandingPage() {
   const { slug } = useParams();
   const page = getLandingBySlug(slug);
 
-  useLandingMeta(page);
-
   if (!page) {
     return <Navigate to="/" replace />;
   }
+
+  // LocalBusiness / Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `Forge Digital ${page.district}`,
+    "image": "https://theforgedigital.in/ats_resume.png",
+    "@id": `https://theforgedigital.in/${page.slug}`,
+    "url": `https://theforgedigital.in/${page.slug}`,
+    "telephone": "+918848524175",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": page.district,
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": page.geo.lat,
+      "longitude": page.geo.lng
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  };
+
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": page.faq.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  };
 
   const waLink = `https://wa.me/918848524175?text=${encodeURIComponent(page.cta.waMessage)}`;
 
   return (
     <div className="landing-page">
+      <SEO 
+        title={page.metaTitle}
+        description={page.metaDescription}
+        canonical={`/${page.slug}`}
+        keywords={page.keywords}
+        schema={[serviceSchema, faqSchema]}
+      />
       <header className="landing-header">
         <div className="landing-header-inner">
           <a href="/" className="landing-home-link">

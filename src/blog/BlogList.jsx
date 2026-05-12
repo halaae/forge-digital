@@ -1,61 +1,31 @@
 // src/blog/BlogList.jsx
 // The /blog index page — lists all posts. Hidden from main nav; fully crawlable.
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { posts } from './posts';
+import SEO from '../components/SEO';
 import './Blog.css';
 
-// Inject page-level meta tags dynamically
-function useBlogListMeta() {
-  useEffect(() => {
-    const prev = {
-      title: document.title,
-      desc: document.querySelector('meta[name="description"]')?.getAttribute('content'),
-      canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
-    };
-
-    document.title = 'ATS Resume Tips & Career Advice Blog | Forge Digital';
-
-    const setMeta = (name, content, prop = false) => {
-      const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-      let el = document.querySelector(sel);
-      if (!el) { el = document.createElement('meta'); prop ? el.setAttribute('property', name) : el.setAttribute('name', name); document.head.appendChild(el); }
-      el.setAttribute('content', content);
-    };
-
-    setMeta('description', 'Expert ATS resume tips, career branding advice, and job search strategies from Forge Digital — Kerala\'s leading resume writing service.');
-    setMeta('og:title', 'ATS Resume Tips & Career Advice Blog | Forge Digital', true);
-    setMeta('og:description', 'Expert ATS resume tips, career branding advice, and job search strategies from Forge Digital.', true);
-    setMeta('og:url', 'https://theforgedigital.in/blog', true);
-    setMeta('twitter:title', 'ATS Resume Tips & Career Advice Blog | Forge Digital');
-    setMeta('twitter:description', 'Expert ATS resume tips, career branding advice, and job search strategies from Forge Digital.');
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) { canonical = document.createElement('link'); canonical.setAttribute('rel', 'canonical'); document.head.appendChild(canonical); }
-    canonical.setAttribute('href', 'https://theforgedigital.in/blog');
-
-    // JSON-LD for blog list
-    const ld = { '@context': 'https://schema.org', '@type': 'Blog', 'name': 'Forge Digital Blog', 'url': 'https://theforgedigital.in/blog', 'description': 'ATS resume tips, career branding advice, and job search strategies.', 'publisher': { '@type': 'Organization', 'name': 'Forge Digital', 'url': 'https://theforgedigital.in' } };
-    let script = document.getElementById('blog-list-ld');
-    if (!script) { script = document.createElement('script'); script.id = 'blog-list-ld'; script.type = 'application/ld+json'; document.head.appendChild(script); }
-    script.textContent = JSON.stringify(ld);
-
-    return () => {
-      document.title = prev.title;
-      if (prev.desc) setMeta('description', prev.desc);
-      if (prev.canonical) canonical.setAttribute('href', prev.canonical);
-      const s = document.getElementById('blog-list-ld');
-      if (s) s.remove();
-    };
-  }, []);
-}
-
 export default function BlogList() {
-  useBlogListMeta();
+  const blogSchema = { 
+    '@context': 'https://schema.org', 
+    '@type': 'Blog', 
+    'name': 'Forge Digital Blog', 
+    'url': 'https://theforgedigital.in/blog', 
+    'description': 'ATS resume tips, career branding advice, and job search strategies.', 
+    'publisher': { '@type': 'Organization', 'name': 'Forge Digital', 'url': 'https://theforgedigital.in' } 
+  };
 
   return (
     <div className="blog-page">
+      <SEO 
+        title="ATS Resume Tips & Career Advice Blog"
+        description="Expert ATS resume tips, career branding advice, and job search strategies from Forge Digital — Kerala's leading resume writing service."
+        canonical="/blog"
+        keywords="ATS resume tips, resume writing guide, career branding Kerala, job search strategies India"
+        schema={blogSchema}
+      />
       {/* Header */}
       <header className="blog-header">
         <div className="blog-header-inner">

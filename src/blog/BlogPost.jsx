@@ -1,9 +1,10 @@
 // src/blog/BlogPost.jsx
 // Individual article page at /blog/:slug — fully SEO-optimised with Article schema.
 
-import React, { useEffect } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
-import { posts, getPostBySlug } from './posts';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { getPostBySlug, posts } from './posts';
+import SEO from '../components/SEO';
 import './Blog.css';
 
 // ── Simple markdown-lite renderer for **bold** and bullet points ──
@@ -40,99 +41,11 @@ function inlineBold(text) {
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 }
 
-// ── Meta injection hook ──
-function useArticleMeta(post) {
-  useEffect(() => {
-    if (!post) return;
-    const canonicalUrl = `https://theforgedigital.in/blog/${post.slug}`;
-
-    const prev = {
-      title: document.title,
-      desc: document.querySelector('meta[name="description"]')?.getAttribute('content'),
-    };
-
-    document.title = post.metaTitle;
-
-    const setMeta = (name, content, prop = false) => {
-      const sel = prop ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-      let el = document.querySelector(sel);
-      if (!el) { el = document.createElement('meta'); prop ? el.setAttribute('property', name) : el.setAttribute('name', name); document.head.appendChild(el); }
-      el.setAttribute('content', content);
-    };
-
-    setMeta('description', post.metaDescription);
-    setMeta('keywords', post.tags.join(', ') + ', ATS resume Kerala, resume writing India, Forge Digital');
-    setMeta('og:title', post.metaTitle, true);
-    setMeta('og:description', post.metaDescription, true);
-    setMeta('og:url', canonicalUrl, true);
-    setMeta('og:type', 'article', true);
-    setMeta('og:image', `https://theforgedigital.in${post.image}`, true);
-    setMeta('article:published_time', post.date + 'T00:00:00+05:30', true);
-    setMeta('twitter:title', post.metaTitle);
-    setMeta('twitter:description', post.metaDescription);
-    setMeta('twitter:image', `https://theforgedigital.in${post.image}`);
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) { canonical = document.createElement('link'); canonical.setAttribute('rel', 'canonical'); document.head.appendChild(canonical); }
-    canonical.setAttribute('href', canonicalUrl);
-
-    // Article JSON-LD
-    const ld = {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      'headline': post.title,
-      'description': post.metaDescription,
-      'image': `https://theforgedigital.in${post.image}`,
-      'datePublished': post.date + 'T00:00:00+05:30',
-      'dateModified': post.date + 'T00:00:00+05:30',
-      'author': { '@type': 'Organization', 'name': 'Forge Digital', 'url': 'https://theforgedigital.in' },
-      'publisher': {
-        '@type': 'Organization',
-        'name': 'Forge Digital',
-        'url': 'https://theforgedigital.in',
-        'logo': { '@type': 'ImageObject', 'url': 'https://theforgedigital.in/logo.png' },
-      },
-      'mainEntityOfPage': { '@type': 'WebPage', '@id': canonicalUrl },
-      'keywords': post.tags.join(', '),
-      'articleSection': post.category,
-      'inLanguage': 'en-IN',
-    };
-
-    // BreadcrumbList JSON-LD
-    const breadcrumb = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      'itemListElement': [
-        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://theforgedigital.in/' },
-        { '@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': 'https://theforgedigital.in/blog' },
-        { '@type': 'ListItem', 'position': 3, 'name': post.title, 'item': canonicalUrl },
-      ],
-    };
-
-    let scriptLd = document.getElementById('article-ld');
-    if (!scriptLd) { scriptLd = document.createElement('script'); scriptLd.id = 'article-ld'; scriptLd.type = 'application/ld+json'; document.head.appendChild(scriptLd); }
-    scriptLd.textContent = JSON.stringify(ld);
-
-    let scriptBc = document.getElementById('article-breadcrumb-ld');
-    if (!scriptBc) { scriptBc = document.createElement('script'); scriptBc.id = 'article-breadcrumb-ld'; scriptBc.type = 'application/ld+json'; document.head.appendChild(scriptBc); }
-    scriptBc.textContent = JSON.stringify(breadcrumb);
-
-    return () => {
-      document.title = prev.title;
-      if (prev.desc) setMeta('description', prev.desc);
-      document.getElementById('article-ld')?.remove();
-      document.getElementById('article-breadcrumb-ld')?.remove();
-    };
-  }, [post]);
-}
-
 export default function BlogPost() {
   const { slug } = useParams();
   const post = getPostBySlug(slug);
 
-  useArticleMeta(post);
-
-  // 404 — redirect to /blog
+  // 404 — show not found UI
   if (!post) {
     return (
       <div className="blog-page">
@@ -147,16 +60,48 @@ export default function BlogPost() {
     );
   }
 
+  const canonicalUrl = `/blog/${post.slug}`;
+  
+  // Article JSON-LD
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': post.title,
+    'description': post.metaDescription,
+    'image': `https://theforgedigital.in${post.image}`,
+    'datePublished': post.date + 'T00:00:00+05:30',
+    'dateModified': post.date + 'T00:00:00+05:30',
+    'author': { '@type': 'Organization', 'name': 'Forge Digital', 'url': 'https://theforgedigital.in' },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Forge Digital',
+      'url': 'https://theforgedigital.in',
+      'logo': { '@type': 'ImageObject', 'url': 'https://theforgedigital.in/logo.png' },
+    },
+    'mainEntityOfPage': { '@type': 'WebPage', '@id': `https://theforgedigital.in${canonicalUrl}` },
+    'keywords': post.tags.join(', '),
+    'articleSection': post.category,
+    'inLanguage': 'en-IN',
+  };
+
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
   const waLink = `https://wa.me/918848524175?text=${encodeURIComponent(post.cta.waMessage)}`;
 
   return (
     <div className="blog-page">
+      <SEO 
+        title={post.title}
+        description={post.metaDescription}
+        canonical={canonicalUrl}
+        ogType="article"
+        ogImage={`https://theforgedigital.in${post.image}`}
+        keywords={post.tags.join(', ')}
+        schema={articleSchema}
+      />
       <BlogNav />
 
       <main id="main-content">
-        <article className="blog-article-wrapper" itemScope itemType="https://schema.org/Article">
-
+        <article className="blog-article-wrapper">
           {/* Breadcrumb nav */}
           <nav aria-label="Breadcrumb">
             <Link to="/blog" className="blog-back-link">← All Articles</Link>
@@ -164,16 +109,14 @@ export default function BlogPost() {
 
           <span className="blog-article-category" aria-label={`Category: ${post.category}`}>{post.category}</span>
 
-          <h1 className="blog-article-title" itemProp="headline">{post.title}</h1>
+          <h1 className="blog-article-title">{post.title}</h1>
 
           <div className="blog-article-meta">
-            <time dateTime={post.date} itemProp="datePublished">{post.dateFormatted}</time>
+            <time dateTime={post.date}>{post.dateFormatted}</time>
             <span className="blog-article-meta-dot" aria-hidden="true">·</span>
             <span>{post.readTime}</span>
             <span className="blog-article-meta-dot" aria-hidden="true">·</span>
-            <span itemProp="author" itemScope itemType="https://schema.org/Organization">
-              <span itemProp="name">Forge Digital</span>
-            </span>
+            <span>Forge Digital</span>
           </div>
 
           <img
@@ -184,13 +127,11 @@ export default function BlogPost() {
             decoding="async"
             width="760"
             height="420"
-            itemProp="image"
           />
 
           <p className="blog-article-intro">{post.intro}</p>
 
-          {/* Article sections */}
-          <div itemProp="articleBody">
+          <div>
             {post.sections.map((sec, i) => (
               <section className="blog-section" key={i} aria-labelledby={`section-${i}`}>
                 <h2 id={`section-${i}`}>{sec.heading}</h2>

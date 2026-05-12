@@ -13,6 +13,7 @@ import Contact from './components/Contact';
 import BlogList from './blog/BlogList';
 import BlogPost from './blog/BlogPost';
 import LandingPage from './landing/LandingPage';
+import SEO from './components/SEO';
 import './App.css';
 
 const Marquee = () => {
@@ -45,6 +46,12 @@ function HomePage() {
 
   return (
     <div className="app-container">
+      <SEO 
+        title="ATS Resume Writing & Career Branding Service in Kerala"
+        description="Forge Digital – Kerala's top ATS resume writing service for freshers, students & professionals. Get ATS-optimized CVs, LinkedIn optimization, and digital portfolios. Starting ₹299."
+        canonical="/"
+        keywords="ATS resume service Kerala, resume writing India, resume service Calicut, resume for freshers, LinkedIn optimization India, career branding, Forge Digital"
+      />
       <AmbientBackground />
       <Header />
       <main id="main-content">
