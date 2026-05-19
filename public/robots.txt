@@ -1,8 +1,11 @@
 # Forge Digital – robots.txt
 # https://theforgedigital.in
 
+# All search engine crawlers
 User-agent: *
 Allow: /
+Allow: /blog
+Allow: /blog/
 
 # Block Vite build assets (hashed JS/CSS bundles — not crawlable content)
 Disallow: /assets/
@@ -20,5 +23,49 @@ Disallow: /favicon.svg
 Disallow: /icons.svg
 Disallow: /site.webmanifest
 
+# Google specific
+User-agent: Googlebot
+Allow: /
+Allow: /blog
+Allow: /blog/
+Crawl-delay: 0
+
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /ats_resume.png
+Allow: /logo.png
+Disallow: /mockup1.png
+Disallow: /mockup2.png
+Disallow: /mockup3.png
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Block AI training crawlers (optional, preserves content value)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
 # Sitemap location
 Sitemap: https://theforgedigital.in/sitemap.xml
+
+# Host directive (helps some engines)
+Host: https://theforgedigital.in

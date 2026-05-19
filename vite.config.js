@@ -14,6 +14,10 @@ const blogSlugs = [
   'why-ats-rejects-resumes',
   'resume-tips-for-freshers',
   'linkedin-optimization-india-strategy',
+  'cover-letter-writing-guide-india',
+  'portfolio-building-guide-professionals',
+  'resume-mistakes-to-avoid-2026',
+  'career-change-resume-guide',
 ]
 
 const blogRoutes = ['/blog', ...blogSlugs.map((s) => `/blog/${s}`)]
